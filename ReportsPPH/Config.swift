@@ -23,7 +23,7 @@ class Config {
     
     private  init(){
 
-        let configDict = UtilsHelper.loadFromConfigFile(fileName: "Config", params: ["wsUrl", "wsApi"])
+        let configDict = UtilsHelper.loadFromConfigFile(fileName: "Config_debug", params: ["wsUrl", "wsApi"])
         wsUrl = configDict?["wsUrl"]
         wsApi = configDict?["wsApi"]
         
