@@ -17,7 +17,7 @@ A Swift implementation for a reporting tool
 
 ## To be implemented
 
->- [ ] Rest Client
->- [ ] Login
->- [ ] UI
->- [ ] Tests for both UI and bussiness
+ - [ ] Rest Client
+ - [ ] Login
+ - [ ] UI
+ - [ ] Tests for both UI and bussiness
