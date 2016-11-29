@@ -1,0 +1,44 @@
+//
+//  ViewController.swift
+//  ReportsPPH
+//
+//  Created by iulian david on 11/26/16.
+//  Copyright © 2016 iulian david. All rights reserved.
+//
+
+import UIKit
+
+class InitialViewController: UIViewController {
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        if(DataService.instance.isUserLoggedIn){
+            loadMainView()
+        }
+            
+        else
+        {
+            loadLoginView()
+        }
+    }
+    func loadMainView() {
+        if let appVC = UIStoryboard(name: "App", bundle: nil).instantiateViewController(withIdentifier: "App") as? AppVC {
+            self.present(appVC, animated: true, completion: nil)
+        }
+    }
+    
+    
+    func loadLoginView(){
+        if let loginVC = UIStoryboard(name: "Login", bundle: nil).instantiateViewController(withIdentifier: "Login") as? LoginVC {
+            self.present(loginVC, animated: true, completion: nil)
+        }
+    }
+    
+
+}
+
