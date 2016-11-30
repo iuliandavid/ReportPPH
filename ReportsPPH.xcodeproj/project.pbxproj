@@ -12,38 +12,21 @@
 		B8C95E661DE97ADB0027CC4C /* Initial.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8C95E641DE97ADB0027CC4C /* Initial.storyboard */; };
 		B8C95E6B1DE97ADB0027CC4C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B8C95E6A1DE97ADB0027CC4C /* Assets.xcassets */; };
 		B8C95E6E1DE97ADB0027CC4C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8C95E6C1DE97ADB0027CC4C /* LaunchScreen.storyboard */; };
-		B8C95E841DE97ADC0027CC4C /* ReportsPPHUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C95E831DE97ADC0027CC4C /* ReportsPPHUITests.swift */; };
-		B8C95E961DE97D1C0027CC4C /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = B8C95E951DE97D1C0027CC4C /* MBProgressHUD.m */; };
-		B8C95E971DE97D1C0027CC4C /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = B8C95E951DE97D1C0027CC4C /* MBProgressHUD.m */; };
-		B8C95E981DE97D1C0027CC4C /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = B8C95E951DE97D1C0027CC4C /* MBProgressHUD.m */; };
 		B8C95EA01DE97F560027CC4C /* LoginTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C95E9F1DE97F560027CC4C /* LoginTests.swift */; };
 		B8C95EA21DE9823C0027CC4C /* Config_prod.plist in Resources */ = {isa = PBXBuildFile; fileRef = B8C95EA11DE9823C0027CC4C /* Config_prod.plist */; };
 		B8C95EA31DE9823C0027CC4C /* Config_prod.plist in Resources */ = {isa = PBXBuildFile; fileRef = B8C95EA11DE9823C0027CC4C /* Config_prod.plist */; };
 		B8C95EA41DE9823C0027CC4C /* Config_prod.plist in Resources */ = {isa = PBXBuildFile; fileRef = B8C95EA11DE9823C0027CC4C /* Config_prod.plist */; };
 		B8C95EA91DE983F80027CC4C /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C95EA81DE983F80027CC4C /* Config.swift */; };
-		B8C95EAA1DE983F80027CC4C /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C95EA81DE983F80027CC4C /* Config.swift */; };
-		B8C95EAB1DE983F80027CC4C /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C95EA81DE983F80027CC4C /* Config.swift */; };
 		B8C95EAE1DE992490027CC4C /* UtilsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C95EAD1DE992490027CC4C /* UtilsHelper.swift */; };
-		B8C95EAF1DEA57970027CC4C /* UtilsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C95EAD1DE992490027CC4C /* UtilsHelper.swift */; };
-		B8C95EB01DEA57980027CC4C /* UtilsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C95EAD1DE992490027CC4C /* UtilsHelper.swift */; };
 		B8C95EB21DEBE48F0027CC4C /* Config_debug.plist in Resources */ = {isa = PBXBuildFile; fileRef = B8C95EB11DEBE48F0027CC4C /* Config_debug.plist */; };
 		B8C95EB31DEBE48F0027CC4C /* Config_debug.plist in Resources */ = {isa = PBXBuildFile; fileRef = B8C95EB11DEBE48F0027CC4C /* Config_debug.plist */; };
 		B8C95EB41DEBE48F0027CC4C /* Config_debug.plist in Resources */ = {isa = PBXBuildFile; fileRef = B8C95EB11DEBE48F0027CC4C /* Config_debug.plist */; };
 		B8C95EB61DEBF6F50027CC4C /* App.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8C95EB51DEBF6F50027CC4C /* App.storyboard */; };
-		B8C95EB71DEBF6F50027CC4C /* App.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8C95EB51DEBF6F50027CC4C /* App.storyboard */; };
-		B8C95EB81DEBF6F50027CC4C /* App.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8C95EB51DEBF6F50027CC4C /* App.storyboard */; };
 		B8C95EBA1DEBF7080027CC4C /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8C95EB91DEBF7080027CC4C /* Login.storyboard */; };
-		B8C95EBB1DEBF7080027CC4C /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8C95EB91DEBF7080027CC4C /* Login.storyboard */; };
-		B8C95EBC1DEBF7080027CC4C /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8C95EB91DEBF7080027CC4C /* Login.storyboard */; };
 		B8C95EBE1DED35460027CC4C /* AppVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C95EBD1DED35460027CC4C /* AppVC.swift */; };
-		B8C95EBF1DED35460027CC4C /* AppVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C95EBD1DED35460027CC4C /* AppVC.swift */; };
-		B8C95EC01DED35460027CC4C /* AppVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C95EBD1DED35460027CC4C /* AppVC.swift */; };
 		B8C95EC21DED35580027CC4C /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C95EC11DED35580027CC4C /* LoginVC.swift */; };
-		B8C95EC31DED35580027CC4C /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C95EC11DED35580027CC4C /* LoginVC.swift */; };
-		B8C95EC41DED35580027CC4C /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C95EC11DED35580027CC4C /* LoginVC.swift */; };
 		B8C95EC61DED39AC0027CC4C /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C95EC51DED39AC0027CC4C /* DataService.swift */; };
-		B8C95EC71DED39AC0027CC4C /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C95EC51DED39AC0027CC4C /* DataService.swift */; };
-		B8C95EC81DED39AC0027CC4C /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C95EC51DED39AC0027CC4C /* DataService.swift */; };
+		B8C95ECF1DEDACBD0027CC4C /* InitialControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C95EC91DEDA2F40027CC4C /* InitialControllerTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,13 +57,7 @@
 		B8C95E741DE97ADB0027CC4C /* ReportsPPHTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ReportsPPHTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8C95E7A1DE97ADC0027CC4C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B8C95E7F1DE97ADC0027CC4C /* ReportsPPHUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ReportsPPHUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		B8C95E831DE97ADC0027CC4C /* ReportsPPHUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportsPPHUITests.swift; sourceTree = "<group>"; };
 		B8C95E851DE97ADC0027CC4C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B8C95E911DE97D1B0027CC4C /* ReportsPPH-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ReportsPPH-Bridging-Header.h"; sourceTree = "<group>"; };
-		B8C95E921DE97D1B0027CC4C /* ReportsPPHTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ReportsPPHTests-Bridging-Header.h"; sourceTree = "<group>"; };
-		B8C95E931DE97D1B0027CC4C /* ReportsPPHUITests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ReportsPPHUITests-Bridging-Header.h"; sourceTree = "<group>"; };
-		B8C95E941DE97D1C0027CC4C /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
-		B8C95E951DE97D1C0027CC4C /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		B8C95E9F1DE97F560027CC4C /* LoginTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginTests.swift; sourceTree = "<group>"; };
 		B8C95EA11DE9823C0027CC4C /* Config_prod.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Config_prod.plist; sourceTree = "<group>"; };
 		B8C95EA81DE983F80027CC4C /* Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
@@ -91,6 +68,7 @@
 		B8C95EBD1DED35460027CC4C /* AppVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppVC.swift; sourceTree = "<group>"; };
 		B8C95EC11DED35580027CC4C /* LoginVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		B8C95EC51DED39AC0027CC4C /* DataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
+		B8C95EC91DEDA2F40027CC4C /* InitialControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InitialControllerTests.swift; path = ../ReportsPPHUITests/InitialControllerTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,7 +124,6 @@
 				B8C95E9C1DE97D5F0027CC4C /* Controller */,
 				B8C95E9B1DE97D580027CC4C /* View */,
 				B8C95E9A1DE97D510027CC4C /* Model */,
-				B8C95E991DE97D3C0027CC4C /* ProgressIndicator */,
 				B8C95E601DE97ADB0027CC4C /* AppDelegate.swift */,
 				B8C95E9E1DE97D700027CC4C /* Resources */,
 			);
@@ -156,6 +133,7 @@
 		B8C95E771DE97ADB0027CC4C /* ReportsPPHTests */ = {
 			isa = PBXGroup;
 			children = (
+				B8C95EC91DEDA2F40027CC4C /* InitialControllerTests.swift */,
 				B8C95E7A1DE97ADC0027CC4C /* Info.plist */,
 				B8C95E9F1DE97F560027CC4C /* LoginTests.swift */,
 			);
@@ -165,22 +143,9 @@
 		B8C95E821DE97ADC0027CC4C /* ReportsPPHUITests */ = {
 			isa = PBXGroup;
 			children = (
-				B8C95E831DE97ADC0027CC4C /* ReportsPPHUITests.swift */,
 				B8C95E851DE97ADC0027CC4C /* Info.plist */,
 			);
 			path = ReportsPPHUITests;
-			sourceTree = "<group>";
-		};
-		B8C95E991DE97D3C0027CC4C /* ProgressIndicator */ = {
-			isa = PBXGroup;
-			children = (
-				B8C95E941DE97D1C0027CC4C /* MBProgressHUD.h */,
-				B8C95E951DE97D1C0027CC4C /* MBProgressHUD.m */,
-				B8C95E911DE97D1B0027CC4C /* ReportsPPH-Bridging-Header.h */,
-				B8C95E921DE97D1B0027CC4C /* ReportsPPHTests-Bridging-Header.h */,
-				B8C95E931DE97D1B0027CC4C /* ReportsPPHUITests-Bridging-Header.h */,
-			);
-			name = ProgressIndicator;
 			sourceTree = "<group>";
 		};
 		B8C95E9A1DE97D510027CC4C /* Model */ = {
@@ -366,10 +331,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B8C95EBB1DEBF7080027CC4C /* Login.storyboard in Resources */,
 				B8C95EB31DEBE48F0027CC4C /* Config_debug.plist in Resources */,
 				B8C95EA31DE9823C0027CC4C /* Config_prod.plist in Resources */,
-				B8C95EB71DEBF6F50027CC4C /* App.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -377,10 +340,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B8C95EBC1DEBF7080027CC4C /* Login.storyboard in Resources */,
 				B8C95EB41DEBE48F0027CC4C /* Config_debug.plist in Resources */,
 				B8C95EA41DE9823C0027CC4C /* Config_prod.plist in Resources */,
-				B8C95EB81DEBF6F50027CC4C /* App.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -398,7 +359,6 @@
 				B8C95E611DE97ADB0027CC4C /* AppDelegate.swift in Sources */,
 				B8C95EC61DED39AC0027CC4C /* DataService.swift in Sources */,
 				B8C95EBE1DED35460027CC4C /* AppVC.swift in Sources */,
-				B8C95E961DE97D1C0027CC4C /* MBProgressHUD.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -406,13 +366,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B8C95E971DE97D1C0027CC4C /* MBProgressHUD.m in Sources */,
-				B8C95EAF1DEA57970027CC4C /* UtilsHelper.swift in Sources */,
-				B8C95EC71DED39AC0027CC4C /* DataService.swift in Sources */,
-				B8C95EC31DED35580027CC4C /* LoginVC.swift in Sources */,
 				B8C95EA01DE97F560027CC4C /* LoginTests.swift in Sources */,
-				B8C95EAA1DE983F80027CC4C /* Config.swift in Sources */,
-				B8C95EBF1DED35460027CC4C /* AppVC.swift in Sources */,
+				B8C95ECF1DEDACBD0027CC4C /* InitialControllerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -420,13 +375,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B8C95E841DE97ADC0027CC4C /* ReportsPPHUITests.swift in Sources */,
-				B8C95EB01DEA57980027CC4C /* UtilsHelper.swift in Sources */,
-				B8C95EC81DED39AC0027CC4C /* DataService.swift in Sources */,
-				B8C95EC41DED35580027CC4C /* LoginVC.swift in Sources */,
-				B8C95E981DE97D1C0027CC4C /* MBProgressHUD.m in Sources */,
-				B8C95EAB1DE983F80027CC4C /* Config.swift in Sources */,
-				B8C95EC01DED35460027CC4C /* AppVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -569,7 +517,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.id.ReportsPPH;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "ReportsPPH/ReportsPPH-Bridging-Header.h";
+				SWIFT_INSTALL_OBJC_HEADER = NO;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
@@ -586,7 +534,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.id.ReportsPPH;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "ReportsPPH/ReportsPPH-Bridging-Header.h";
+				SWIFT_INSTALL_OBJC_HEADER = NO;
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;

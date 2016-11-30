@@ -8,6 +8,7 @@
 
 import Foundation
 
+typealias TestLoginCompleted = () -> ()
 
 
 class DataService {
@@ -19,6 +20,18 @@ class DataService {
      Variable that stores the login status
     */
     var isUserLoggedIn = false
+    
+    
+    /**
+     Test if we saved the login credentials
+     If we get the login credentials we issue a login
+    */
+    func testLogin(completed: @escaping TestLoginCompleted){
+        
+        
+        
+        completed()
+    }
     
     
 }

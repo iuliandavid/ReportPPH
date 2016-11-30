@@ -17,14 +17,19 @@ class InitialViewController: UIViewController {
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        if(DataService.instance.isUserLoggedIn){
-            loadMainView()
-        }
+        
+        DataService.instance.testLogin{
             
-        else
-        {
-            loadLoginView()
+            if(DataService.instance.isUserLoggedIn){
+                self.loadMainView()
+            }
+                
+            else{
+                self.loadLoginView()
+            }
         }
+        
+        
     }
     func loadMainView() {
         if let appVC = UIStoryboard(name: "App", bundle: nil).instantiateViewController(withIdentifier: "App") as? AppVC {
