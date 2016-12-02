@@ -6,5 +6,9 @@
         <string>http://127.0.0.1:8080</string>
         <key>wsApi</key>
         <string>ReportsWS</string>
+        <key>clientID</key>
+        <string>ios</string>
+        <key>clientSecret</key>
+        <string>iosSecret</string>
     </dict>
 </plist>
