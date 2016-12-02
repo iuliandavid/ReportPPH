@@ -56,5 +56,18 @@ class UtilsHelper {
         return result
     }
 
-    
+    static func buildAuthorizationHeader(_ authType: String,_ userAuth: UserAuth) -> String? {
+        
+        switch authType {
+        case "basic":
+            let basicAuth = "\(Config.instance.clientID!):\(Config.instance.clientSecret!)"
+            let basicAuthUtf8 = basicAuth.data(using: String.Encoding.utf8)!
+            let basicAuthBase64 = basicAuthUtf8.base64EncodedString()
+            return "Basic \(basicAuthBase64)"
+        case "bearer":
+            return "Bearer \(userAuth._tokeninfo?._access_token)"
+        default:
+            return nil
+        }
+    }
 }
