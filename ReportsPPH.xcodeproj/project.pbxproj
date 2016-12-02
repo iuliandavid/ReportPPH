@@ -27,6 +27,10 @@
 		B8C95EC21DED35580027CC4C /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C95EC11DED35580027CC4C /* LoginVC.swift */; };
 		B8C95EC61DED39AC0027CC4C /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C95EC51DED39AC0027CC4C /* DataService.swift */; };
 		B8C95ECF1DEDACBD0027CC4C /* InitialControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C95EC91DEDA2F40027CC4C /* InitialControllerTests.swift */; };
+		B8C95ED11DF1CB1A0027CC4C /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C95ED01DF1CB1A0027CC4C /* ApiClient.swift */; };
+		B8C95ED31DF1CC360027CC4C /* ApiClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C95ED21DF1CC360027CC4C /* ApiClientTests.swift */; };
+		B8C95ED51DF1EB270027CC4C /* TokenInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C95ED41DF1EB270027CC4C /* TokenInfo.swift */; };
+		B8C95ED81DF1ED8A0027CC4C /* UserAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C95ED71DF1ED8A0027CC4C /* UserAuth.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +73,10 @@
 		B8C95EC11DED35580027CC4C /* LoginVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		B8C95EC51DED39AC0027CC4C /* DataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		B8C95EC91DEDA2F40027CC4C /* InitialControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InitialControllerTests.swift; path = ../ReportsPPHUITests/InitialControllerTests.swift; sourceTree = "<group>"; };
+		B8C95ED01DF1CB1A0027CC4C /* ApiClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
+		B8C95ED21DF1CC360027CC4C /* ApiClientTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiClientTests.swift; sourceTree = "<group>"; };
+		B8C95ED41DF1EB270027CC4C /* TokenInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TokenInfo.swift; sourceTree = "<group>"; };
+		B8C95ED71DF1ED8A0027CC4C /* UserAuth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserAuth.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +144,7 @@
 				B8C95EC91DEDA2F40027CC4C /* InitialControllerTests.swift */,
 				B8C95E7A1DE97ADC0027CC4C /* Info.plist */,
 				B8C95E9F1DE97F560027CC4C /* LoginTests.swift */,
+				B8C95ED21DF1CC360027CC4C /* ApiClientTests.swift */,
 			);
 			path = ReportsPPHTests;
 			sourceTree = "<group>";
@@ -151,6 +160,8 @@
 		B8C95E9A1DE97D510027CC4C /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				B8C95ED41DF1EB270027CC4C /* TokenInfo.swift */,
+				B8C95ED71DF1ED8A0027CC4C /* UserAuth.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -181,6 +192,7 @@
 			children = (
 				B8C95EA81DE983F80027CC4C /* Config.swift */,
 				B8C95EC51DED39AC0027CC4C /* DataService.swift */,
+				B8C95ED01DF1CB1A0027CC4C /* ApiClient.swift */,
 			);
 			name = Service;
 			sourceTree = "<group>";
@@ -352,10 +364,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B8C95ED81DF1ED8A0027CC4C /* UserAuth.swift in Sources */,
 				B8C95EAE1DE992490027CC4C /* UtilsHelper.swift in Sources */,
 				B8C95E631DE97ADB0027CC4C /* InitialViewController.swift in Sources */,
 				B8C95EC21DED35580027CC4C /* LoginVC.swift in Sources */,
+				B8C95ED11DF1CB1A0027CC4C /* ApiClient.swift in Sources */,
 				B8C95EA91DE983F80027CC4C /* Config.swift in Sources */,
+				B8C95ED51DF1EB270027CC4C /* TokenInfo.swift in Sources */,
 				B8C95E611DE97ADB0027CC4C /* AppDelegate.swift in Sources */,
 				B8C95EC61DED39AC0027CC4C /* DataService.swift in Sources */,
 				B8C95EBE1DED35460027CC4C /* AppVC.swift in Sources */,
@@ -366,6 +381,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B8C95ED31DF1CC360027CC4C /* ApiClientTests.swift in Sources */,
 				B8C95EA01DE97F560027CC4C /* LoginTests.swift in Sources */,
 				B8C95ECF1DEDACBD0027CC4C /* InitialControllerTests.swift in Sources */,
 			);
@@ -550,7 +566,6 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.id.ReportsPPHTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "ReportsPPH/ReportsPPHTests-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ReportsPPH.app/ReportsPPH";
@@ -568,7 +583,6 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.id.ReportsPPHTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "ReportsPPH/ReportsPPHTests-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ReportsPPH.app/ReportsPPH";
 			};
@@ -584,7 +598,6 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.id.ReportsPPHUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "ReportsPPH/ReportsPPHUITests-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = ReportsPPH;
@@ -601,7 +614,6 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.id.ReportsPPHUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "ReportsPPH/ReportsPPHUITests-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = ReportsPPH;
 			};
