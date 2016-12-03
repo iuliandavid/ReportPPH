@@ -30,7 +30,15 @@ class ApiClient {
             request.addValue(authHeader, forHTTPHeaderField: "authorization")
         }
         
-        
+        executeApiRequest(request: request, completed: {(statusCode, jsonData, error) in
+            completed(statusCode, jsonData, error)
+        })
+    }
+    
+    
+    
+    
+    private func executeApiRequest(request: NSMutableURLRequest,completed: @escaping RequestCompleted){
         
         let session = URLSession.shared
         let dataTask = session.dataTask(with: request as URLRequest, completionHandler: { (data, response, error) -> Void in
@@ -53,6 +61,6 @@ class ApiClient {
         })
         
         dataTask.resume()
-        
+
     }
 }

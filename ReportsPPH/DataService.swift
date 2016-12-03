@@ -34,23 +34,35 @@ class DataService {
     */
     func testLogin(completed: @escaping TestLoginCompleted){
         
+        if user?.tokenInfo != nil {
+            isUserLoggedIn = true
+        } else if let username = user?.username, let password = user?.password {
+            
+        }
+        
         completed()
     }
     
-    //persists the authorization data to UserDefaults
-    func saveUserData() {
+    
+    //stores the authorization data into Keychain
+    func saveUserData(){
+         let keychain = KeychainSwift()
         
-        //Trebuie setat NsKeyedArchiver
+        if user == nil {
+            user = UserAuth()
+        }
         let userAuth = NSKeyedArchiver.archivedData(withRootObject: user ?? UserAuth())
-        //asta se stocheaza serializat
-        UserDefaults.standard.set(userAuth, forKey: "userAuth")
-        UserDefaults.standard.synchronize()
+        keychain.set(userAuth, forKey: "userAuth")
+        
     }
     
-    //loads the authorization data from UserDefaults
+    
+    //loads the authorization data from Keychain
     func loadUserData(){
         
-        guard let loadedUserData = UserDefaults.standard.data(forKey: "userAuth") as Data? , let userData = NSKeyedUnarchiver.unarchiveObject(with: loadedUserData) as? UserAuth
+        let keychain = KeychainSwift()
+        
+        guard let loadedUserData = keychain.getData("userAuth") as Data? , let userData = NSKeyedUnarchiver.unarchiveObject(with: loadedUserData) as? UserAuth
             else {
                 user = UserAuth()
                 return

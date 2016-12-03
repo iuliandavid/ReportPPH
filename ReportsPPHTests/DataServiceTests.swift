@@ -60,7 +60,8 @@ class DataServiceTests: XCTestCase {
         XCTAssertTrue(DataService.instance.user?.password == userAuth.password)
         
         XCTAssertTrue(DataService.instance.user?.tokenInfo?.refresh_token == "rt")
-        
+        DataService.instance.user = nil
+        DataService.instance.saveUserData()
     }
     
 }

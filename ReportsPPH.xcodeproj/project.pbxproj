@@ -32,6 +32,7 @@
 		B8C95ED51DF1EB270027CC4C /* TokenInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C95ED41DF1EB270027CC4C /* TokenInfo.swift */; };
 		B8C95ED81DF1ED8A0027CC4C /* UserAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C95ED71DF1ED8A0027CC4C /* UserAuth.swift */; };
 		B8C95EDA1DF246070027CC4C /* DataServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C95ED91DF246070027CC4C /* DataServiceTests.swift */; };
+		B8C95EE01DF2CDCB0027CC4C /* KeychainSwiftDistrib.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C95EDF1DF2CDCB0027CC4C /* KeychainSwiftDistrib.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +80,8 @@
 		B8C95ED41DF1EB270027CC4C /* TokenInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TokenInfo.swift; sourceTree = "<group>"; };
 		B8C95ED71DF1ED8A0027CC4C /* UserAuth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserAuth.swift; sourceTree = "<group>"; };
 		B8C95ED91DF246070027CC4C /* DataServiceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataServiceTests.swift; sourceTree = "<group>"; };
+		B8C95EDB1DF2CCF10027CC4C /* ReportsPPH.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ReportsPPH.entitlements; sourceTree = "<group>"; };
+		B8C95EDF1DF2CDCB0027CC4C /* KeychainSwiftDistrib.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainSwiftDistrib.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +132,8 @@
 		B8C95E5F1DE97ADB0027CC4C /* ReportsPPH */ = {
 			isa = PBXGroup;
 			children = (
+				B8C95EDC1DF2CD6B0027CC4C /* Keychain */,
+				B8C95EDB1DF2CCF10027CC4C /* ReportsPPH.entitlements */,
 				B8C95EAC1DE9922E0027CC4C /* Utils */,
 				B8C95E9D1DE97D650027CC4C /* Service */,
 				B8C95E9C1DE97D5F0027CC4C /* Controller */,
@@ -219,6 +224,14 @@
 			name = Utils;
 			sourceTree = "<group>";
 		};
+		B8C95EDC1DF2CD6B0027CC4C /* Keychain */ = {
+			isa = PBXGroup;
+			children = (
+				B8C95EDF1DF2CDCB0027CC4C /* KeychainSwiftDistrib.swift */,
+			);
+			name = Keychain;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -290,6 +303,11 @@
 						DevelopmentTeam = BQ9WNW24Z8;
 						LastSwiftMigration = 0810;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
 					};
 					B8C95E731DE97ADB0027CC4C = {
 						CreatedOnToolsVersion = 8.1;
@@ -374,6 +392,7 @@
 				B8C95ED11DF1CB1A0027CC4C /* ApiClient.swift in Sources */,
 				B8C95EA91DE983F80027CC4C /* Config.swift in Sources */,
 				B8C95ED51DF1EB270027CC4C /* TokenInfo.swift in Sources */,
+				B8C95EE01DF2CDCB0027CC4C /* KeychainSwiftDistrib.swift in Sources */,
 				B8C95E611DE97ADB0027CC4C /* AppDelegate.swift in Sources */,
 				B8C95EC61DED39AC0027CC4C /* DataService.swift in Sources */,
 				B8C95EBE1DED35460027CC4C /* AppVC.swift in Sources */,
@@ -531,6 +550,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = ReportsPPH/ReportsPPH.entitlements;
 				DEVELOPMENT_TEAM = BQ9WNW24Z8;
 				INFOPLIST_FILE = ReportsPPH/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
@@ -548,6 +568,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = ReportsPPH/ReportsPPH.entitlements;
 				DEVELOPMENT_TEAM = BQ9WNW24Z8;
 				INFOPLIST_FILE = ReportsPPH/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
