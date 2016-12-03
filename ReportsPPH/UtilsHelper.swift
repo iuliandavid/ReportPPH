@@ -65,7 +65,7 @@ class UtilsHelper {
             let basicAuthBase64 = basicAuthUtf8.base64EncodedString()
             return "Basic \(basicAuthBase64)"
         case "bearer":
-            return "Bearer \(userAuth._tokeninfo?._access_token)"
+            return "Bearer \(userAuth.tokenInfo?.access_token)"
         default:
             return nil
         }

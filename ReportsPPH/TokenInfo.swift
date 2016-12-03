@@ -11,10 +11,31 @@ import Foundation
 class TokenInfo : NSObject, NSCoding {
     
 
-    var _refresh_token: String?
-    var _access_token: String?
+    private var _refresh_token: String?
+    private var _access_token: String?
 
     
+    var access_token: String? {
+        get {
+            return _access_token
+        }
+        set {
+            if newValue != nil {
+                _access_token = newValue
+            }
+        }
+    }
+    
+    var refresh_token: String? {
+        get {
+            return _refresh_token
+        }
+        set {
+            if newValue != nil {
+                _refresh_token = newValue
+            }
+        }
+    }
     
     override init(){
         

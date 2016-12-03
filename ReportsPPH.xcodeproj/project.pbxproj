@@ -31,6 +31,7 @@
 		B8C95ED31DF1CC360027CC4C /* ApiClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C95ED21DF1CC360027CC4C /* ApiClientTests.swift */; };
 		B8C95ED51DF1EB270027CC4C /* TokenInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C95ED41DF1EB270027CC4C /* TokenInfo.swift */; };
 		B8C95ED81DF1ED8A0027CC4C /* UserAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C95ED71DF1ED8A0027CC4C /* UserAuth.swift */; };
+		B8C95EDA1DF246070027CC4C /* DataServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C95ED91DF246070027CC4C /* DataServiceTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +78,7 @@
 		B8C95ED21DF1CC360027CC4C /* ApiClientTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiClientTests.swift; sourceTree = "<group>"; };
 		B8C95ED41DF1EB270027CC4C /* TokenInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TokenInfo.swift; sourceTree = "<group>"; };
 		B8C95ED71DF1ED8A0027CC4C /* UserAuth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserAuth.swift; sourceTree = "<group>"; };
+		B8C95ED91DF246070027CC4C /* DataServiceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataServiceTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +147,7 @@
 				B8C95E7A1DE97ADC0027CC4C /* Info.plist */,
 				B8C95E9F1DE97F560027CC4C /* LoginTests.swift */,
 				B8C95ED21DF1CC360027CC4C /* ApiClientTests.swift */,
+				B8C95ED91DF246070027CC4C /* DataServiceTests.swift */,
 			);
 			path = ReportsPPHTests;
 			sourceTree = "<group>";
@@ -384,6 +387,7 @@
 				B8C95ED31DF1CC360027CC4C /* ApiClientTests.swift in Sources */,
 				B8C95EA01DE97F560027CC4C /* LoginTests.swift in Sources */,
 				B8C95ECF1DEDACBD0027CC4C /* InitialControllerTests.swift in Sources */,
+				B8C95EDA1DF246070027CC4C /* DataServiceTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

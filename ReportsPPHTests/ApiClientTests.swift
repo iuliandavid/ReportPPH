@@ -36,6 +36,7 @@ class ApiClientTests: XCTestCase {
         let url = "http://localhost:8080/ReportsWS/oauth/token?grant_type=password&username=bob&password=bobs_auth"
         var accessToken:String?
         var refreshToken:String?
+        
         ApiClient.instance.executeRequest(url: url, UtilsHelper.buildAuthorizationHeader, authType: "basic", userAuth: UserAuth()){
             (statusCode, data, error) in
             if let err = error {
@@ -45,6 +46,7 @@ class ApiClientTests: XCTestCase {
                 print(httpResponse)
                 accessToken = httpResponse["access_token"] as? String
                 refreshToken = httpResponse["refresh_token"] as? String
+                
             }
             running = false
         }
@@ -82,4 +84,7 @@ class ApiClientTests: XCTestCase {
         
         XCTAssert(errorNotNill)
     }
+    
+    
+    
 }
