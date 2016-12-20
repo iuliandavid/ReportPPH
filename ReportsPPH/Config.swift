@@ -33,5 +33,6 @@ class Config {
         clientSecret = configDict?["clientSecret"]
     }
     
+    static let API_OAUTH_ENDPOINT = "/oauth/token"
     
     }
