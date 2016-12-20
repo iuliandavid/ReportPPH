@@ -30,6 +30,42 @@ class ApiClientTests: XCTestCase {
         }
     }
     
+    /**
+     Test ApiClient.instance.executeAccessTokenRequest
+     ``` sh
+     curl -X POST -H "Authorization: Basic aW9zOmlvc1NlY3JldA==" -H "Content-Type: application/x-www-form-urlencoded" -H "Cache-Control: no-cache" -d 'grant_type=password&username=bob&password=bobs_auth' "http://localhost:8080/ReportsWS/oauth/token"
+     ```
+    */
+    func testApiClientExecuteAccessTokenRequest() {
+        var running = true
+        var accessGranted = false
+        //Given
+        DataService.instance.user?.tokenInfo?.access_token = "at"
+        DataService.instance.user?.tokenInfo?.refresh_token = "rt"
+        
+        //when
+        ApiClient.instance.executeAccessTokenRequest(username: "bob", password: "bobs_auth"){
+            (accessTokenReceived) in
+            accessGranted = accessTokenReceived
+            running = false
+        }
+        
+        while running {
+            print("waiting...")
+            sleep(1)
+        }
+        
+        //then
+        XCTAssertTrue(accessGranted)
+        print(DataService.instance.user?.tokenInfo?.refresh_token ?? "No refresh token")
+        XCTAssertNotNil(DataService.instance.user?.tokenInfo)
+        XCTAssertNotEqual(DataService.instance.user?.tokenInfo?.refresh_token, "rt")
+        XCTAssertNotEqual(DataService.instance.user?.tokenInfo?.access_token, "at")
+    }
+    
+    /**
+     A HTTP GET example of request token through executeRequest method in ApiClient
+    */
     func testReceiveAccessToken(){
         
         var running = true
@@ -37,7 +73,8 @@ class ApiClientTests: XCTestCase {
         var accessToken:String?
         var refreshToken:String?
         
-        ApiClient.instance.executeRequest(url: url, UtilsHelper.buildAuthorizationHeader, authType: "basic", userAuth: UserAuth()){
+//        ApiClient.instance.executeAccessTokenRequest(username: "bob", password: "bobs_auth", completed: )
+        ApiClient.instance.executeRequest(url: url, UtilsHelper.buildAuthorizationHeader, authType: "basic", userAuth: UserAuth()) {
             (statusCode, data, error) in
             if let err = error {
                 print(err)
