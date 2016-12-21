@@ -18,7 +18,11 @@ class ApiClientTests: XCTestCase {
     }
     
     override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        //empty the keychain with the test data
+        let keychain = KeychainSwift()
+        keychain.delete("userAuth")
+        
+        
         super.tearDown()
     }
     
@@ -42,9 +46,11 @@ class ApiClientTests: XCTestCase {
         //Given
         DataService.instance.user?.tokenInfo?.access_token = "at"
         DataService.instance.user?.tokenInfo?.refresh_token = "rt"
+        let username = "mike"
+        let password = "mikes_auth"
         
         //when
-        ApiClient.instance.executeAccessTokenRequest(username: "bob", password: "bobs_auth"){
+        ApiClient.instance.executeAccessTokenRequest(username: username, password: password){
             (accessTokenReceived) in
             accessGranted = accessTokenReceived
             running = false
@@ -69,11 +75,12 @@ class ApiClientTests: XCTestCase {
     func testReceiveAccessToken(){
         
         var running = true
-        let url = "http://localhost:8080/ReportsWS/oauth/token?grant_type=password&username=bob&password=bobs_auth"
+        let username = "bob"
+        let password = "bobs_auth"
+        let url = "\(Config.instance.wsUrl!)/\(Config.instance.wsApi!)/\(Config.API_OAUTH_ENDPOINT)?grant_type=password&username=\(username)&password=\(password)"
         var accessToken:String?
         var refreshToken:String?
         
-//        ApiClient.instance.executeAccessTokenRequest(username: "bob", password: "bobs_auth", completed: )
         ApiClient.instance.executeRequest(url: url, UtilsHelper.buildAuthorizationHeader, authType: "basic", userAuth: UserAuth()) {
             (statusCode, data, error) in
             if let err = error {
