@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B8157D551E0A3A98008ADB90 /* SwiftSpinner.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8157D541E0A3A98008ADB90 /* SwiftSpinner.swift */; };
 		B8C95E611DE97ADB0027CC4C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C95E601DE97ADB0027CC4C /* AppDelegate.swift */; };
 		B8C95E631DE97ADB0027CC4C /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C95E621DE97ADB0027CC4C /* InitialViewController.swift */; };
 		B8C95E661DE97ADB0027CC4C /* Initial.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8C95E641DE97ADB0027CC4C /* Initial.storyboard */; };
@@ -53,6 +54,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B8157D541E0A3A98008ADB90 /* SwiftSpinner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftSpinner.swift; sourceTree = "<group>"; };
 		B8C95E5D1DE97ADB0027CC4C /* ReportsPPH.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReportsPPH.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8C95E601DE97ADB0027CC4C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B8C95E621DE97ADB0027CC4C /* InitialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialViewController.swift; sourceTree = "<group>"; };
@@ -109,6 +111,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B8157D531E0A3A75008ADB90 /* SwiftSpinner */ = {
+			isa = PBXGroup;
+			children = (
+				B8157D541E0A3A98008ADB90 /* SwiftSpinner.swift */,
+			);
+			name = SwiftSpinner;
+			sourceTree = "<group>";
+		};
 		B8C95E541DE97ADB0027CC4C = {
 			isa = PBXGroup;
 			children = (
@@ -132,6 +142,7 @@
 		B8C95E5F1DE97ADB0027CC4C /* ReportsPPH */ = {
 			isa = PBXGroup;
 			children = (
+				B8157D531E0A3A75008ADB90 /* SwiftSpinner */,
 				B8C95EDC1DF2CD6B0027CC4C /* Keychain */,
 				B8C95EDB1DF2CCF10027CC4C /* ReportsPPH.entitlements */,
 				B8C95EAC1DE9922E0027CC4C /* Utils */,
@@ -390,6 +401,7 @@
 				B8C95E631DE97ADB0027CC4C /* InitialViewController.swift in Sources */,
 				B8C95EC21DED35580027CC4C /* LoginVC.swift in Sources */,
 				B8C95ED11DF1CB1A0027CC4C /* ApiClient.swift in Sources */,
+				B8157D551E0A3A98008ADB90 /* SwiftSpinner.swift in Sources */,
 				B8C95EA91DE983F80027CC4C /* Config.swift in Sources */,
 				B8C95ED51DF1EB270027CC4C /* TokenInfo.swift in Sources */,
 				B8C95EE01DF2CDCB0027CC4C /* KeychainSwiftDistrib.swift in Sources */,

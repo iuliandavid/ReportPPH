@@ -36,11 +36,18 @@ class DataService {
         
         if user?.tokenInfo != nil {
             isUserLoggedIn = true
+            completed()
         } else if let username = user?.username, let password = user?.password {
-            
+            ApiClient.instance.executeAccessTokenRequest(username: username, password: password) {
+                (accessTokenReceived) in
+                self.isUserLoggedIn = accessTokenReceived
+                completed()
+            }
+        } else {
+            completed()
         }
         
-        completed()
+        
     }
     
     

@@ -17,7 +17,7 @@ class InitialViewController: UIViewController {
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
+        SwiftSpinner.show("Initial Data")
         DataService.instance.testLogin{
             
             if(DataService.instance.isUserLoggedIn){
@@ -27,6 +27,7 @@ class InitialViewController: UIViewController {
             else{
                 self.loadLoginView()
             }
+            SwiftSpinner.hide()
         }
         
         
