@@ -10,9 +10,10 @@ import Foundation
 
 typealias RequestCompleted = (Int?, Any?, Error?) -> ()
 
-typealias AccessTokenReceived = (Bool) -> ()
+typealias AccessTokenReceived = (Result<Any, MyError<String>>) -> ()
 
 
-protocol NetworkingApi {
+protocol NetworkingApi: class {
     
+    func executeAccessTokenRequest(username: String, password: String, completed: @escaping AccessTokenReceived ) 
 }

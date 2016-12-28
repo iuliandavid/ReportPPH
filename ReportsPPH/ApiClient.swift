@@ -52,7 +52,7 @@ class ApiClient: NetworkingApi {
      - parameter completed: A closure containing the result of the authentication.
      
     */
-    func executeAccessTokenRequest(username: String, password: String, withDataService service: DataService, completed: @escaping AccessTokenReceived ) {
+    func executeAccessTokenRequest(username: String, password: String, completed: @escaping AccessTokenReceived ) {
         
         let url = "\(Config.instance.wsUrl!)/\(Config.instance.wsApi!)/\(Config.API_OAUTH_ENDPOINT)"
         
@@ -76,25 +76,24 @@ class ApiClient: NetworkingApi {
         executeApiRequest(request: request, completed: {(statusCode, jsonData, error) in
             if let err = error {
                 print(err)
-                completed(false)
+                completed(Result.Failure(MyError.UnhandledError(err.localizedDescription)))
             } else {
                 let httpResponse = jsonData as! [String: AnyObject]
                 print(httpResponse)
-                let tokenInfo = TokenInfo()
-                tokenInfo.access_token = httpResponse["access_token"] as? String
-                tokenInfo.refresh_token = httpResponse["refresh_token"] as? String
-                if let user = service.user {
-                    user.tokenInfo = tokenInfo
+                if statusCode! == 200 {
+                    let tokenInfo = TokenInfo()
+                    tokenInfo.access_token = httpResponse["access_token"] as? String
+                    tokenInfo.refresh_token = httpResponse["refresh_token"] as? String
+                    completed(Result.Success(tokenInfo))
                 } else {
-                    let user = UserAuth()
-                    user.username = username
-                    user.password = password
-                    user.tokenInfo = tokenInfo
-//                    service.user = user;
+                    guard let error_description = httpResponse["error_description"] as? String
+                        else {
+                            completed(Result.Failure(MyError.UnhandledError(httpResponse.description)))
+                            return
+                        }
+                    
+                    completed(Result.Failure(MyError.AuthenticationFailure(error_description)))
                 }
-                
-                service.saveUserData()
-                completed(true)
             }
         })
         

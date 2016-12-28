@@ -10,11 +10,11 @@ import XCTest
 @testable import ReportsPPH
 
 
-class ApiClientTests: XCTestCase {
+class ApiClientTests: XCTestCase, DataServiceInjected {
     
     override func setUp() {
         super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        InjectionMap.dataService = MockDataService()
     }
     
     override func tearDown() {
@@ -44,18 +44,32 @@ class ApiClientTests: XCTestCase {
         var running = true
         var accessGranted = false
         
-        let dataService:DataService = DataServiceImpl.instance
-        
         //Given
+        dataService.user?.tokenInfo = TokenInfo()
         dataService.user?.tokenInfo?.access_token = "at"
         dataService.user?.tokenInfo?.refresh_token = "rt"
         let username = "mike"
         let password = "mikes_auth"
         
         //when
-        ApiClient.instance.executeAccessTokenRequest(username: username, password: password, withDataService: dataService){
-            (accessTokenReceived) in
-            accessGranted = accessTokenReceived
+        ApiClient.instance.executeAccessTokenRequest(username: username, password: password){
+            (result) in
+            switch (result) {
+            case .Success(let accessToken) :
+                accessGranted = true
+                guard let token = accessToken as? TokenInfo
+                    else {
+                        self.dataService.user?.tokenInfo = nil
+                        break
+                }
+                self.dataService.user?.tokenInfo?.access_token = token.access_token
+                self.dataService.user?.tokenInfo?.refresh_token = token.refresh_token
+                break;
+                
+            case .Failure(let err):
+                print(err)
+                break;
+            }
             running = false
         }
         

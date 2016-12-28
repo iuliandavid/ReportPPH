@@ -25,7 +25,7 @@ class Config {
     let clientSecret: String?
     
     private  init(){
-
+        
         let configDict = UtilsHelper.loadFromConfigFile(fileName: "Config_debug", params: ["wsUrl", "wsApi", "clientID", "clientSecret"])
         wsUrl = configDict?["wsUrl"]
         wsApi = configDict?["wsApi"]
@@ -40,4 +40,4 @@ class Config {
         case LONG = 1
     }
     
-    }
+}
