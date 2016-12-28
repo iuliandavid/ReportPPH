@@ -23,7 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
-            DataService.instance.saveUserData()
+            DataServiceImpl.instance.saveUserData()
     }
 
     func applicationDidEnterBackground(_ application: UIApplication) {

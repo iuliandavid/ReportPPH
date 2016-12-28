@@ -12,7 +12,7 @@ import XCTest
 
 class DataServiceTests: XCTestCase {
     
-    let userAuth = DataService.instance.user!
+    let userAuth = DataServiceImpl.instance.user!
     
     override func setUp() {
         super.setUp()
@@ -33,8 +33,9 @@ class DataServiceTests: XCTestCase {
     
     func testShouldSaveDataToUserDefaults() {
         //Given
+        var dataService:DataService = DataServiceImpl.instance
         
-        XCTAssertNotNil(DataService.instance.user)
+        XCTAssertNotNil(dataService.user)
         
         userAuth.username = "TestUser"
         userAuth.password = "TestPassword"
@@ -46,22 +47,22 @@ class DataServiceTests: XCTestCase {
         tokenInfo.refresh_token = "rt"
         
         userAuth.tokenInfo = tokenInfo
+       
         //When
-        
-        DataService.instance.user = userAuth
-        DataService.instance.saveUserData()
+        dataService.user = userAuth
+        dataService.saveUserData()
         
         
         //Then
-        DataService.instance.user = nil
-        XCTAssertNil(DataService.instance.user)
+        dataService.user = nil
+        XCTAssertNil(dataService.user)
         
-        DataService.instance.loadUserData()
-        XCTAssertTrue(DataService.instance.user?.password == userAuth.password)
+        dataService.loadUserData()
+        XCTAssertTrue(dataService.user?.password == userAuth.password)
         
-        XCTAssertTrue(DataService.instance.user?.tokenInfo?.refresh_token == "rt")
-        DataService.instance.user = nil
-        DataService.instance.saveUserData()
+        XCTAssertTrue(dataService.user?.tokenInfo?.refresh_token == "rt")
+        dataService.user = nil
+        dataService.saveUserData()
     }
     
 }

@@ -43,14 +43,17 @@ class ApiClientTests: XCTestCase {
     func testApiClientExecuteAccessTokenRequest() {
         var running = true
         var accessGranted = false
+        
+        let dataService:DataService = DataServiceImpl.instance
+        
         //Given
-        DataService.instance.user?.tokenInfo?.access_token = "at"
-        DataService.instance.user?.tokenInfo?.refresh_token = "rt"
+        dataService.user?.tokenInfo?.access_token = "at"
+        dataService.user?.tokenInfo?.refresh_token = "rt"
         let username = "mike"
         let password = "mikes_auth"
         
         //when
-        ApiClient.instance.executeAccessTokenRequest(username: username, password: password){
+        ApiClient.instance.executeAccessTokenRequest(username: username, password: password, withDataService: dataService){
             (accessTokenReceived) in
             accessGranted = accessTokenReceived
             running = false
@@ -63,10 +66,10 @@ class ApiClientTests: XCTestCase {
         
         //then
         XCTAssertTrue(accessGranted)
-        print(DataService.instance.user?.tokenInfo?.refresh_token ?? "No refresh token")
-        XCTAssertNotNil(DataService.instance.user?.tokenInfo)
-        XCTAssertNotEqual(DataService.instance.user?.tokenInfo?.refresh_token, "rt")
-        XCTAssertNotEqual(DataService.instance.user?.tokenInfo?.access_token, "at")
+        print(dataService.user?.tokenInfo?.refresh_token ?? "No refresh token")
+        XCTAssertNotNil(dataService.user?.tokenInfo)
+        XCTAssertNotEqual(dataService.user?.tokenInfo?.refresh_token, "rt")
+        XCTAssertNotEqual(dataService.user?.tokenInfo?.access_token, "at")
     }
     
     /**

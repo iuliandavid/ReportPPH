@@ -8,12 +8,9 @@
 
 import Foundation
 
-typealias RequestCompleted = (Int?, Any?, Error?) -> ()
-
-typealias AccessTokenReceived = (Bool) -> ()
 
 /// Singleton for Api accesses
-class ApiClient {
+class ApiClient: NetworkingApi {
     
     static let instance = ApiClient()
     
@@ -55,7 +52,7 @@ class ApiClient {
      - parameter completed: A closure containing the result of the authentication.
      
     */
-    func executeAccessTokenRequest(username: String, password: String, completed: @escaping AccessTokenReceived ) {
+    func executeAccessTokenRequest(username: String, password: String, withDataService service: DataService, completed: @escaping AccessTokenReceived ) {
         
         let url = "\(Config.instance.wsUrl!)/\(Config.instance.wsApi!)/\(Config.API_OAUTH_ENDPOINT)"
         
@@ -86,27 +83,25 @@ class ApiClient {
                 let tokenInfo = TokenInfo()
                 tokenInfo.access_token = httpResponse["access_token"] as? String
                 tokenInfo.refresh_token = httpResponse["refresh_token"] as? String
-                if let user = DataService.instance.user {
+                if let user = service.user {
                     user.tokenInfo = tokenInfo
                 } else {
                     let user = UserAuth()
                     user.username = username
                     user.password = password
                     user.tokenInfo = tokenInfo
-                    DataService.instance.user = user;
+//                    service.user = user;
                 }
                 
-                DataService.instance.saveUserData()
+                service.saveUserData()
                 completed(true)
             }
         })
         
     }
-    
+
     /**
-     
-     Executes a HTTP request, parses the response if any into JSON and passes the results: HTTP status code, JSON result and error to a closure
-     
+    Executes a HTTP request, parses the response if any into JSON and passes the results: HTTP status code, JSON result and error to a closure
     */
     private func executeApiRequest(request: NSMutableURLRequest,completed: @escaping RequestCompleted){
         

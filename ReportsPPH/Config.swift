@@ -35,4 +35,9 @@ class Config {
     
     static let API_OAUTH_ENDPOINT = "/oauth/token"
     
+    enum AnimationTimes: Double {
+        case SHORT = 0.2
+        case LONG = 1
+    }
+    
     }
