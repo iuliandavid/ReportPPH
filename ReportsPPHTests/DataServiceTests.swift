@@ -11,12 +11,11 @@ import XCTest
 
 
 class DataServiceTests: XCTestCase {
-    
-    let userAuth = DataServiceImpl.instance.user!
+
     
     override func setUp() {
         super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        InjectionMap.dataService = MockDataService()
     }
     
     override func tearDown() {
@@ -33,9 +32,10 @@ class DataServiceTests: XCTestCase {
     
     func testShouldSaveDataToUserDefaults() {
         //Given
-        var dataService:DataService = DataServiceImpl.instance
+        var dataService:DataService = InjectionMap.dataService
+        let userAuth = dataService.user!
         
-        XCTAssertNotNil(dataService.user)
+        XCTAssertNotNil(userAuth)
         
         userAuth.username = "TestUser"
         userAuth.password = "TestPassword"

@@ -16,6 +16,7 @@ class DataServiceImpl: DataService {
     
     private var _user: UserAuth?
     
+    
     var user: UserAuth? {
         get{
             return self._user
@@ -41,9 +42,18 @@ class DataServiceImpl: DataService {
         if user?.tokenInfo != nil {
             completed(true)
         } else if let username = user?.username, let password = user?.password {
-            ApiClient.instance.executeAccessTokenRequest(username: username, password: password, withDataService: self){
-                (accessTokenReceived) in
-                completed(accessTokenReceived)
+            networking.executeAccessTokenRequest(username: username, password: password){
+                (result) in
+                switch (result) {
+                case .Success(let accessToken):
+                    self.user?.tokenInfo = accessToken as? TokenInfo
+                    self.saveUserData()
+                    break
+                case .Failure(let error) :
+                    print(error, terminator: "\n")
+                    break
+                }
+                completed(true)
             }
         } else {
             completed(false)
@@ -78,4 +88,8 @@ class DataServiceImpl: DataService {
         self.user = userData
         
     }
+}
+
+extension DataServiceImpl: NetworkingApiInjected {
+    
 }

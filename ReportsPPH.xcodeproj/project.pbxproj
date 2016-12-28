@@ -12,6 +12,8 @@
 		B84B523C1E12912D00383F41 /* DataServiceInjected.swift in Sources */ = {isa = PBXBuildFile; fileRef = B84B523B1E12912D00383F41 /* DataServiceInjected.swift */; };
 		B84B523E1E1291A800383F41 /* NetworkingApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = B84B523D1E1291A800383F41 /* NetworkingApi.swift */; };
 		B84B52401E12920100383F41 /* NetworkingApiInjected.swift in Sources */ = {isa = PBXBuildFile; fileRef = B84B523F1E12920100383F41 /* NetworkingApiInjected.swift */; };
+		B84B52441E13BC7400383F41 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = B84B52431E13BC7400383F41 /* Result.swift */; };
+		B84B52461E144BFD00383F41 /* MockDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B84B52451E144BFD00383F41 /* MockDataService.swift */; };
 		B8C95E611DE97ADB0027CC4C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C95E601DE97ADB0027CC4C /* AppDelegate.swift */; };
 		B8C95E631DE97ADB0027CC4C /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C95E621DE97ADB0027CC4C /* InitialViewController.swift */; };
 		B8C95E661DE97ADB0027CC4C /* Initial.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8C95E641DE97ADB0027CC4C /* Initial.storyboard */; };
@@ -64,6 +66,8 @@
 		B84B523B1E12912D00383F41 /* DataServiceInjected.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataServiceInjected.swift; sourceTree = "<group>"; };
 		B84B523D1E1291A800383F41 /* NetworkingApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkingApi.swift; sourceTree = "<group>"; };
 		B84B523F1E12920100383F41 /* NetworkingApiInjected.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkingApiInjected.swift; sourceTree = "<group>"; };
+		B84B52431E13BC7400383F41 /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		B84B52451E144BFD00383F41 /* MockDataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockDataService.swift; sourceTree = "<group>"; };
 		B8C95E5D1DE97ADB0027CC4C /* ReportsPPH.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReportsPPH.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8C95E601DE97ADB0027CC4C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B8C95E621DE97ADB0027CC4C /* InitialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialViewController.swift; sourceTree = "<group>"; };
@@ -185,6 +189,7 @@
 				B8C95E9F1DE97F560027CC4C /* LoginTests.swift */,
 				B8C95ED21DF1CC360027CC4C /* ApiClientTests.swift */,
 				B8C95ED91DF246070027CC4C /* DataServiceTests.swift */,
+				B84B52451E144BFD00383F41 /* MockDataService.swift */,
 			);
 			path = ReportsPPHTests;
 			sourceTree = "<group>";
@@ -202,6 +207,7 @@
 			children = (
 				B8C95ED41DF1EB270027CC4C /* TokenInfo.swift */,
 				B8C95ED71DF1ED8A0027CC4C /* UserAuth.swift */,
+				B84B52431E13BC7400383F41 /* Result.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -421,6 +427,7 @@
 			files = (
 				B84B523E1E1291A800383F41 /* NetworkingApi.swift in Sources */,
 				B84B523A1E1290F100383F41 /* InjectionMap.swift in Sources */,
+				B84B52441E13BC7400383F41 /* Result.swift in Sources */,
 				B84B523C1E12912D00383F41 /* DataServiceInjected.swift in Sources */,
 				B8C95ED81DF1ED8A0027CC4C /* UserAuth.swift in Sources */,
 				B8C95EAE1DE992490027CC4C /* UtilsHelper.swift in Sources */,
@@ -443,6 +450,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B84B52461E144BFD00383F41 /* MockDataService.swift in Sources */,
 				B8C95ED31DF1CC360027CC4C /* ApiClientTests.swift in Sources */,
 				B8C95EA01DE97F560027CC4C /* LoginTests.swift in Sources */,
 				B8C95ECF1DEDACBD0027CC4C /* InitialControllerTests.swift in Sources */,

@@ -17,8 +17,12 @@ class InitialViewController: UIViewController {
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        
+        let keychain = KeychainSwift()
+        keychain.delete("userAuth")
+        
         SwiftSpinner.show("Initial Data")
-        DataServiceImpl.instance.testLogin {
+        dataService.testLogin {
             (isUserLoggedIn) in
             if isUserLoggedIn {
                 self.loadMainView()
@@ -32,6 +36,7 @@ class InitialViewController: UIViewController {
         
         
     }
+    
     func loadMainView() {
         if let appVC = UIStoryboard(name: "App", bundle: nil).instantiateViewController(withIdentifier: "App") as? AppVC {
             self.present(appVC, animated: true, completion: nil)
@@ -47,4 +52,6 @@ class InitialViewController: UIViewController {
     
 
 }
+
+extension InitialViewController: DataServiceInjected {}
 

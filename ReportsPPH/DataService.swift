@@ -10,8 +10,10 @@ typealias TestLoginCompleted = (Bool) -> ()
 
 protocol DataService {
 
-    var user:UserAuth?
-        {
+    /**
+     Retrieve the user property
+    */
+    var user:UserAuth? {
             get
             set
         }
