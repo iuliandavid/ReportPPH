@@ -58,7 +58,7 @@ class ApiClient: NetworkingApi {
         
         let request = NSMutableURLRequest(url: NSURL(string: url)! as URL,
                                           cachePolicy: .useProtocolCachePolicy,
-                                          timeoutInterval: 10.0)
+                                          timeoutInterval: 30.0)
         
         if let authHeader = UtilsHelper.buildAuthorizationHeader("basic",UserAuth())  {
             
@@ -78,7 +78,11 @@ class ApiClient: NetworkingApi {
                 print(err)
                 completed(Result.Failure(MyError.UnhandledError(err.localizedDescription)))
             } else {
-                let httpResponse = jsonData as! [String: AnyObject]
+                guard let httpResponse = jsonData as? [String: AnyObject] else {
+                    
+                    completed(Result.Failure(MyError.AuthenticationFailure("Error decoding the result: \(jsonData)")))
+                    return
+                }
                 print(httpResponse)
                 if statusCode! == 200 {
                     let tokenInfo = TokenInfo()
