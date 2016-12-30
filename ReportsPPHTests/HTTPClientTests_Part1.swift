@@ -13,31 +13,29 @@ class HTTPClientTests_Part1: XCTestCase {
     var subject: HTTPClient!
     let session = MockURLSession()
     
+    let EMPTY_URL = "http://localhost"
+    
     override func setUp() {
         super.setUp()
         subject = HTTPClient(session: session)
     }
     
     func test_GET_RequestsTheURL() {
-        
-        let url = NSMutableURLRequest(url: NSURL(string: "http://google.com")! as URL,
-                                          cachePolicy: .useProtocolCachePolicy,
-                                          timeoutInterval: 10.0)
-        subject.get(url: url as URLRequest) { (_, _) -> Void in }
+        let url = URLRequest(url: URL(string: EMPTY_URL)!)
+        subject.executeRequest(url: url as URLRequest) { (_,_, _) -> Void in }
         
         XCTAssert(session.lastURL == url.url)
     }
     
     func test_GET_StartsTheRequest() {
         let dataTask = MockURLSessionDataTask()
-        let address = "https://www.random.org/dice/?num=2"
-        guard let url = URL(string: address) else {
+        guard let url = URL(string: EMPTY_URL) else {
             XCTFail()
             return
         }
         let request = URLRequest(url: url)
         session.nextDataTask = dataTask
-        subject.get(url: request) { (_, _) -> Void in }
+        subject.executeRequest(url: request) { (_,_, _) -> Void in }
         
         XCTAssert(dataTask.resumeWasCalled)
     }

@@ -9,20 +9,27 @@
 import XCTest
 @testable import ReportsPPH
 
+/**
+ Integration test for HTTPClient
+ Test if we get some data from the internet
+ - Remark:
+    This test uses [JSONPLACEHOLDER](https://jsonplaceholder.typicode.com/)
+ */
 class HTTPClientTests_Integration: XCTestCase {
     
     var subject: HTTPClient!
     
-    let callBackDelay: TimeInterval = 2
+    let callBackDelay: TimeInterval = 5
 
+    let INTEGRATION_TEST_URL = "https://jsonplaceholder.typicode.com/posts/1"
     
     override func setUp(){
         super.setUp()
-        subject = HTTPClient(session: URLSession.shared)
+        subject = HTTPClient()
     }
     
     /**
-     Test if we get some data from the internet
+     
      So we use expectations
      
      1. Set up an "expectation" telling Xcode that it should start waiting.
@@ -31,17 +38,16 @@ class HTTPClientTests_Integration: XCTestCase {
      */
     
     func test_GET_ReturnsData() {
-       let url = URL(string: "https://jsonplaceholder.typicode.com/posts/1")!
+       let url = URL(string: INTEGRATION_TEST_URL)!
         let expectationVar = expectation(description: "Wait for \(url) to load.")
-        var data: Data?
-        var urlRequest = URLRequest(url: url)
-        urlRequest.httpMethod = "GET"
-        urlRequest.addValue("application/json", forHTTPHeaderField: "Accept")
-        subject.get(url: urlRequest) { (theData, error) -> Void in
+        let urlRequest = URLRequest(url: url)
+
+        var data: Any?
+        subject.executeRequest(url: urlRequest) { (_ , theData, error) -> Void in
             data = theData
             expectationVar.fulfill()
         }
-        waitForExpectations(timeout: 25) { error in
+        waitForExpectations(timeout: callBackDelay) { error in
                 
                 XCTAssertNil(error, "Something went horribly wrong")
                print(error.debugDescription)
@@ -55,27 +61,5 @@ class HTTPClientTests_Integration: XCTestCase {
     
 
     
-    func testAsynchronousURLConnection() {
-        let url = URL(string: "https://jsonplaceholder.typicode.com/posts/1")!
-        let exp = expectation(description: "Async request")
-        
-        var urlRequest = URLRequest(url: url)
-        
-        urlRequest.httpMethod = "GET"
-        urlRequest.addValue("application/json", forHTTPHeaderField: "Accept")
-        
-        let task = URLSession.shared.dataTask(with: urlRequest) { data, response, error in
-            XCTAssertNotNil(data, "data should not be nil")
-            XCTAssertNil(error, "error should be nil")
-            exp.fulfill()
-        }
-        
-        task.resume()
-        
-        waitForExpectations(timeout: 30) { error in
-            if let error = error {
-                print("Error: \(error)")
-            }
-        }
-    }
+    
 }

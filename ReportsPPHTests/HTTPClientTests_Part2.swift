@@ -20,7 +20,7 @@ class HTTPClientTests_Part2: XCTestCase {
     }
     
     func test_GET_WithResponseData_ReturnsTheData() {
-        let expectedData = "{}".data(using: String.Encoding.utf8) 
+        let expectedData = "{}".data(using: String.Encoding.utf8)
         session.nextData = expectedData
         
         let expectationVar = expectation(description: "Wait for url to load.")
@@ -29,8 +29,14 @@ class HTTPClientTests_Part2: XCTestCase {
                              timeoutInterval: 0.0)
         
         var actualData: Data?
-        subject.get(url: url as URLRequest) { (data, _) -> Void in
-            actualData = data
+        subject.executeRequest(url: url as URLRequest) { (_, data, _) -> Void in
+            do {
+            let jsonData = try JSONSerialization.data(withJSONObject: data ?? "")
+                actualData = jsonData
+            } catch {
+                XCTFail()
+            }
+            
             expectationVar.fulfill()
         }
         

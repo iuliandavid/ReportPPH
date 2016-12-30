@@ -9,8 +9,13 @@
 import XCTest
 @testable import ReportsPPH
 
-
+/**
+ Integration tests for ApiClient class
+ Assumes one has a running webservice with oAuth2 authentication
+ */
 class ApiClientTests: XCTestCase, DataServiceInjected {
+    
+    let callBackDelay: TimeInterval = 5
     
     override func setUp() {
         super.setUp()
@@ -41,7 +46,7 @@ class ApiClientTests: XCTestCase, DataServiceInjected {
      ```
     */
     func testApiClientExecuteAccessTokenRequest() {
-        var running = true
+        let expectationText = expectation(description: "Executing access token request")
         var accessGranted = false
         
         //Given
@@ -70,12 +75,14 @@ class ApiClientTests: XCTestCase, DataServiceInjected {
                 print(err)
                 break;
             }
-            running = false
+            expectationText.fulfill()
         }
         
-        while running {
-            print("waiting...")
-            sleep(1)
+        waitForExpectations(timeout: callBackDelay) { error in
+            
+            XCTAssertNil(error, "Something went horribly wrong")
+            print(error.debugDescription)
+            
         }
         
         //then
@@ -91,7 +98,7 @@ class ApiClientTests: XCTestCase, DataServiceInjected {
     */
     func testReceiveAccessToken(){
         
-        var running = true
+        let expectationText = expectation(description: "Executing access token request")
         let username = "bob"
         let password = "bobs_auth"
         let url = "\(Config.instance.wsUrl!)/\(Config.instance.wsApi!)/\(Config.API_OAUTH_ENDPOINT)?grant_type=password&username=\(username)&password=\(password)"
@@ -109,20 +116,23 @@ class ApiClientTests: XCTestCase, DataServiceInjected {
                 refreshToken = httpResponse["refresh_token"] as? String
                 
             }
-            running = false
+            expectationText.fulfill()
         }
         
-        while running {
-            print("waiting...")
-            sleep(1)
+       
+        waitForExpectations(timeout: callBackDelay) { error in
+            
+            XCTAssertNil(error, "Something went horribly wrong")
+            print(error.debugDescription)
+            
         }
-        
+
         XCTAssertNotNil(accessToken)
         XCTAssertNotNil(refreshToken)
     }
     
     func testIncorrectUrlShouldGetAnError(){
-        var running = true
+        let expectationText = expectation(description: "Executing access token request")
         let url = "http://localhost:8081/ReportsWS/oauth/token?grant_type=password&username=bob&password=bobs_auth"
         var errorNotNill: Bool = false
         
@@ -135,12 +145,14 @@ class ApiClientTests: XCTestCase, DataServiceInjected {
                 let httpResponse = data as! [String: AnyObject]
                 print(httpResponse)
             }
-            running = false
+            expectationText.fulfill()
         }
         
-        while running {
-            print("waiting...")
-            sleep(1)
+        waitForExpectations(timeout: callBackDelay) { error in
+            
+            XCTAssertNil(error, "Something went horribly wrong")
+            print(error.debugDescription)
+            
         }
         
         XCTAssert(errorNotNill)

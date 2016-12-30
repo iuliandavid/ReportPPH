@@ -16,7 +16,7 @@
 		B84B52461E144BFD00383F41 /* MockDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B84B52451E144BFD00383F41 /* MockDataService.swift */; };
 		B84B52491E1496DC00383F41 /* URLSessionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B84B52481E1496DC00383F41 /* URLSessionProtocol.swift */; };
 		B84B524D1E149A0600383F41 /* URLSessionDataTaskProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B84B524C1E149A0600383F41 /* URLSessionDataTaskProtocol.swift */; };
-		B84B524F1E149B5000383F41 /* HTTPClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B84B524E1E149B5000383F41 /* HTTPClientTests.swift */; };
+		B84B524F1E149B5000383F41 /* HTTPClientTests_Part1.swift in Sources */ = {isa = PBXBuildFile; fileRef = B84B524E1E149B5000383F41 /* HTTPClientTests_Part1.swift */; };
 		B84B52521E149B9D00383F41 /* MockURLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = B84B52511E149B9D00383F41 /* MockURLSession.swift */; };
 		B84B52541E149BF900383F41 /* MockURLSessionDataTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = B84B52531E149BF900383F41 /* MockURLSessionDataTask.swift */; };
 		B84B52581E14FD6C00383F41 /* HTTPClient_Integration.swift in Sources */ = {isa = PBXBuildFile; fileRef = B84B52571E14FD6C00383F41 /* HTTPClient_Integration.swift */; };
@@ -78,7 +78,7 @@
 		B84B52451E144BFD00383F41 /* MockDataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockDataService.swift; sourceTree = "<group>"; };
 		B84B52481E1496DC00383F41 /* URLSessionProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLSessionProtocol.swift; sourceTree = "<group>"; };
 		B84B524C1E149A0600383F41 /* URLSessionDataTaskProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLSessionDataTaskProtocol.swift; sourceTree = "<group>"; };
-		B84B524E1E149B5000383F41 /* HTTPClientTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPClientTests.swift; sourceTree = "<group>"; };
+		B84B524E1E149B5000383F41 /* HTTPClientTests_Part1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPClientTests_Part1.swift; sourceTree = "<group>"; };
 		B84B52511E149B9D00383F41 /* MockURLSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockURLSession.swift; sourceTree = "<group>"; };
 		B84B52531E149BF900383F41 /* MockURLSessionDataTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockURLSessionDataTask.swift; sourceTree = "<group>"; };
 		B84B52571E14FD6C00383F41 /* HTTPClient_Integration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPClient_Integration.swift; sourceTree = "<group>"; };
@@ -171,6 +171,7 @@
 		B84B52501E149B8600383F41 /* Mocks */ = {
 			isa = PBXGroup;
 			children = (
+				B84B52451E144BFD00383F41 /* MockDataService.swift */,
 				B84B52511E149B9D00383F41 /* MockURLSession.swift */,
 				B84B52531E149BF900383F41 /* MockURLSessionDataTask.swift */,
 			);
@@ -225,8 +226,7 @@
 				B8C95E9F1DE97F560027CC4C /* LoginTests.swift */,
 				B8C95ED21DF1CC360027CC4C /* ApiClientTests.swift */,
 				B8C95ED91DF246070027CC4C /* DataServiceTests.swift */,
-				B84B52451E144BFD00383F41 /* MockDataService.swift */,
-				B84B524E1E149B5000383F41 /* HTTPClientTests.swift */,
+				B84B524E1E149B5000383F41 /* HTTPClientTests_Part1.swift */,
 				B86EBBB51E15129300161B43 /* HTTPClientTests_Part2.swift */,
 				B84B52571E14FD6C00383F41 /* HTTPClient_Integration.swift */,
 			);
@@ -495,7 +495,7 @@
 			files = (
 				B84B52461E144BFD00383F41 /* MockDataService.swift in Sources */,
 				B8C95ED31DF1CC360027CC4C /* ApiClientTests.swift in Sources */,
-				B84B524F1E149B5000383F41 /* HTTPClientTests.swift in Sources */,
+				B84B524F1E149B5000383F41 /* HTTPClientTests_Part1.swift in Sources */,
 				B8C95EA01DE97F560027CC4C /* LoginTests.swift in Sources */,
 				B84B52521E149B9D00383F41 /* MockURLSession.swift in Sources */,
 				B84B52541E149BF900383F41 /* MockURLSessionDataTask.swift in Sources */,

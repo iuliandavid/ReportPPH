@@ -11,5 +11,5 @@ import Foundation
 protocol NetworkingApiInjected { }
 
 extension NetworkingApiInjected {
-    var networking:NetworkingApi { get { return InjectionMap.networking } }
+    var networking: NetworkingApi { get { return InjectionMap.networking } }
 }
