@@ -61,10 +61,12 @@ class HTTPClient {
         let task = session.dataTask(request: url) { (data, response, error) -> Void in
             let resp = response as? HTTPURLResponse
             var json:Any?
-            var err: MyError = MyError.UnhandledError("unhadled error")
-            if (error == nil) {
+            var err: MyError? = nil
+            if let _ = error {
+                err = MyError.NetworkError
+            } else if let _ = resp, let statusCode = resp?.statusCode, 200...299 ~= statusCode {
                 guard data != nil else{
-                    completion(resp?.statusCode, nil, nil)
+                    completion(statusCode, nil, nil)
                     return
                 }
                 do{
@@ -73,8 +75,21 @@ class HTTPClient {
                 }catch {
                     err = MyError.UnhandledError("Unable to deserialize the response: code:\(resp?.statusCode) to JSON")
                 }
-            } else {
-                err = MyError.NetworkError
+                
+            } else if let _ = resp, let statusCode = resp?.statusCode, 400...499 ~= statusCode {
+                guard data != nil else{
+                    completion(statusCode, nil, nil)
+                    return
+                }
+                do{
+                    json = try JSONSerialization.jsonObject(with: data!, options:.allowFragments)
+                    
+                }catch {
+                    err = MyError.UnhandledError("Unable to deserialize the response: code:\(resp?.statusCode) to JSON")
+                }
+            }
+            else {
+                err = MyError.UnhandledError("Unauthorized call:\(resp?.statusCode)")
             }
             completion(resp?.statusCode, json, err)
         }
