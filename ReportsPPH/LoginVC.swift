@@ -34,7 +34,7 @@ class LoginVC: UIViewController {
 
         SwiftSpinner.show("Logging In")
         var authenticationSuccess = false
-        var myerr:MyError<String> = MyError.UnhandledError("Unknown error")
+        var myerr:MyError = MyError.UnhandledError("Unknown error")
         
         networking.executeAccessTokenRequest(username: usernameTxt.text!, password: passwordTxt.text!) {
             (result) in
@@ -59,6 +59,9 @@ class LoginVC: UIViewController {
                     break
                 case .UnhandledError :
                     self.showAlert(withTitle: "Unhandled Error", message: myerr.value)
+                    break
+                case .NetworkError :
+                    self.showAlert(withTitle: "Error", message: myerr.value)
                     break
                 }
                 

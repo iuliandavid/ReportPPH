@@ -17,29 +17,3 @@ enum Result<T, U>{
     
     
 }
-
-
-/**
- Custom Error handling for failures on networking operations
- */
-enum MyError<String>: Error {
-    case AuthenticationFailure(String)
-    case UnhandledError(String)
-    
-    /**
-     
-     Retrieves the custom message appended to the error
-    
-     - returns: The message
-     */
-    var value: String {
-        switch self {
-        case .AuthenticationFailure(let message):
-            return message
-            
-        case .UnhandledError(let message):
-            return message
-        }
-    }
-    
-}

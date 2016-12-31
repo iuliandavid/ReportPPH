@@ -80,7 +80,7 @@ class ApiClient: NetworkingApi {
         httpClient.executeRequest(url: request as URLRequest, completion: {(statusCode, jsonData, error) in
             if let err = error {
                 print(err)
-                completed(Result.Failure(MyError.UnhandledError(err.localizedDescription)))
+                completed(Result.Failure(MyError.UnhandledError(err.value)))
             } else {
                 guard let httpResponse = jsonData as? [String: AnyObject] else {
                     
@@ -107,32 +107,4 @@ class ApiClient: NetworkingApi {
         
     }
 
-//    /**
-//    Executes a HTTP request, parses the response if any into JSON and passes the results: HTTP status code, JSON result and error to a closure
-//    */
-//    private func executeApiRequest(request: NSMutableURLRequest,completed: @escaping RequestCompleted){
-//        
-//        let session = URLSession.shared
-//        let dataTask = session.dataTask(with: request as URLRequest, completionHandler: { (data, response, error) -> Void in
-//            
-//            let resp = response as? HTTPURLResponse
-//            var json:Any?
-//            if (error == nil) {
-//                
-//                do{
-//                    
-//                    json = try JSONSerialization.jsonObject(with: data!, options:.allowFragments)
-//                    
-//                }catch {
-//                    print("Error with Json: \(error)")
-//                }
-//                
-//            }
-//            completed(resp?.statusCode, json, error)
-//            
-//        })
-//        
-//        dataTask.resume()
-//
-//    }
 }

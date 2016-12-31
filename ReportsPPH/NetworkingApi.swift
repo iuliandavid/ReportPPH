@@ -10,7 +10,7 @@ import Foundation
 
 typealias RequestCompleted = (Int?, Any?, Error?) -> ()
 
-typealias AccessTokenReceived = (Result<Any, MyError<String>>) -> ()
+typealias AccessTokenReceived = (Result<Any, MyError>) -> ()
 
 
 protocol NetworkingApi: class {

@@ -7,7 +7,7 @@
 //
 
 import Foundation
-typealias HTTPResult = (Int?, Any?, Error?) -> ()
+typealias HTTPResult = (Int?, Any?, MyError?) -> ()
 
 /**
  
@@ -61,18 +61,20 @@ class HTTPClient {
         let task = session.dataTask(request: url) { (data, response, error) -> Void in
             let resp = response as? HTTPURLResponse
             var json:Any?
-            var err = error
+            var err: MyError = MyError.UnhandledError("unhadled error")
             if (error == nil) {
                 guard data != nil else{
-                    completion(resp?.statusCode, nil, error)
+                    completion(resp?.statusCode, nil, nil)
                     return
                 }
                 do{
                     json = try JSONSerialization.jsonObject(with: data!, options:.allowFragments)
                     
                 }catch {
-                    err = MyError.UnhandledError("Unable to deserialize the response \(data) to JSON")
+                    err = MyError.UnhandledError("Unable to deserialize the response: code:\(resp?.statusCode) to JSON")
                 }
+            } else {
+                err = MyError.NetworkError
             }
             completion(resp?.statusCode, json, err)
         }
