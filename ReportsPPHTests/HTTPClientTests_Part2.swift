@@ -11,12 +11,14 @@ import XCTest
 
 
 class HTTPClientTests_Part2: XCTestCase {
-    var subject: HTTPClient!
+    var httpClient: HTTPClient!
     let session = MockURLSession()
+    
+    let EMPTY_URL = "http://localhost"
     
     override func setUp() {
         super.setUp()
-        subject = HTTPClient(session: session)
+        httpClient = HTTPClient(session: session)
     }
     
     func test_GET_WithResponseData_ReturnsTheData() {
@@ -29,7 +31,7 @@ class HTTPClientTests_Part2: XCTestCase {
                              timeoutInterval: 0.0)
         
         var actualData: Data?
-        subject.executeRequest(url: url as URLRequest) { (_, data, _) -> Void in
+        httpClient.executeRequest(url: url as URLRequest) { (_, data, _) -> Void in
             do {
             let jsonData = try JSONSerialization.data(withJSONObject: data ?? "")
                 actualData = jsonData
@@ -49,4 +51,17 @@ class HTTPClientTests_Part2: XCTestCase {
         XCTAssertEqual(actualData, expectedData)
     }
     
+    func test_GET_WithANetworkError_ReturnsANetworkError() {
+        session.nextError = NSError(domain: "error", code: 0, userInfo: nil)
+        
+        var error: MyError?
+        httpClient.executeRequest(url: URLRequest(url: URL(string: EMPTY_URL)!)) { (_,_, theError) -> Void in
+            error = theError
+        }
+        guard let _ = error else {
+            XCTFail("Nil error")
+            return
+        }
+        XCTAssertTrue(MyError.NetworkError == error!)
+    }
 }
