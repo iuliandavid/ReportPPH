@@ -158,6 +158,4 @@ class ApiClientTests: XCTestCase, DataServiceInjected {
         XCTAssert(errorNotNill)
     }
     
-    
-    
 }
