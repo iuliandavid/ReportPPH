@@ -17,20 +17,27 @@ class InitialViewController: UIViewController {
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+
+///        Left it with the purpose of cleanin the keychain when needed
+//        let keychain = KeychainSwift()
+//        keychain.delete("userAuth")
         
-        DataService.instance.testLogin{
-            
-            if(DataService.instance.isUserLoggedIn){
+        SwiftSpinner.show("Initial Data")
+        dataService.testLogin {
+            (isUserLoggedIn) in
+            if isUserLoggedIn {
                 self.loadMainView()
             }
                 
             else{
                 self.loadLoginView()
             }
+            SwiftSpinner.hide()
         }
         
         
     }
+    
     func loadMainView() {
         if let appVC = UIStoryboard(name: "App", bundle: nil).instantiateViewController(withIdentifier: "App") as? AppVC {
             self.present(appVC, animated: true, completion: nil)
@@ -46,4 +53,6 @@ class InitialViewController: UIViewController {
     
 
 }
+
+extension InitialViewController: DataServiceInjected {}
 
