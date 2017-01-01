@@ -14,11 +14,17 @@ class ApiClient: NetworkingApi {
     
     static let instance = ApiClient()
     
-    var httpClient: HTTPClient!
+    var client = HTTPClient()
     
-    private init(){
-        httpClient = HTTPClient()
+    var httpClient: HTTPClient {
+        get{
+            return self.client
+        }
+        set {
+            self.client = newValue
+        }
     }
+    
     func executeRequest(url: String,_ authorizationHeader: (String, UserAuth) -> String?, authType: String, userAuth: UserAuth,  completed: @escaping RequestCompleted){
         
         
@@ -58,7 +64,7 @@ class ApiClient: NetworkingApi {
     */
     func executeAccessTokenRequest(username: String, password: String, completed: @escaping AccessTokenReceived ) {
         
-        let url = "\(Config.instance.wsUrl!)/\(Config.instance.wsApi!)/\(Config.API_OAUTH_ENDPOINT)"
+        let url = "\(Config.instance.wsUrl!)/\(Config.instance.wsApi!)\(Config.API_OAUTH_ENDPOINT)"
         
         let request = NSMutableURLRequest(url: NSURL(string: url)! as URL,
                                           cachePolicy: .useProtocolCachePolicy,

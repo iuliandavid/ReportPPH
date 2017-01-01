@@ -40,7 +40,6 @@ class Config {
         case LONG = 1
     }
     
-    let urlSession: URLSession = ProcessInfo.processInfo.arguments.contains("UI-TESTING") ? SeededURLSession() : URLSession.shared
-    
-//    let dataService: DataService = 
+    let urlSession: URLSession = ProcessInfo.processInfo.arguments.contains("UI-TESTING") ? UIMockURLSession() : URLSession.shared
+
 }
