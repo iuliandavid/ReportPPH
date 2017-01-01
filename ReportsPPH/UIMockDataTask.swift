@@ -17,7 +17,7 @@ import Foundation
     [Masillotti](http://masilotti.com/ui-testing-stub-network-data/)
  
  */
-class SeededDataTask: URLSessionDataTask {
+class UIMockDataTask: URLSessionDataTask {
     private let url: URLRequest
     private let completion: DataCompletion
     

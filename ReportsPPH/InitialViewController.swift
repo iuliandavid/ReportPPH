@@ -18,9 +18,6 @@ class InitialViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        let keychain = KeychainSwift()
-        keychain.delete("userAuth")
-        
         SwiftSpinner.show("Initial Data")
         dataService.testLogin {
             (isUserLoggedIn) in

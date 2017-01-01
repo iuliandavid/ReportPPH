@@ -23,10 +23,10 @@ class UITests: XCTestCase {
         // In UI tests it is usually best to stop immediately when a failure occurs.
         continueAfterFailure = false
         
-        let TEST_URL = "http://127.0.0.1:8080/ReportsWS//oauth/token"
+        let TEST_URL = "http://127.0.0.1:8080/ReportsWS/oauth/token"
 
         app.launchArguments += ["UI-TESTING"]
-        app.launchEnvironment[TEST_URL] = "{\"access_token\": \"access_token\", \"refresh_token\": \"access_token\"} "
+        app.launchEnvironment[TEST_URL] = "{\"access_token\": \"access_token\", \"refresh_token\": \"refresh_token\"} "
         app.launch()
         
     }
@@ -61,7 +61,7 @@ class UITests: XCTestCase {
         passwordTextField.typeText("test")
         app.buttons["Login"].tap()
 
-        ///introduce a delay and then show APPVC cu wellcomeLabel's text **Logged in** app.labels.
+        ///introduce a delay and then show APPVC with wellcomeLabel's text **Logged in** app.labels.
         let label = app.staticTexts["Logged in"]
         let exists = NSPredicate(format: "exists == true")
         expectation(for: exists, evaluatedWith: label, handler: nil)

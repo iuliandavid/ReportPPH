@@ -8,6 +8,12 @@
 
 import Foundation
 
+/** 
+ Defining the classes used for DataService and the ApiClient
+ - Remark: 
+    The UI testing for DataService is here implemented
+    For Networking API the testing is done through HTTPClient mocking
+ */
 struct InjectionMap {
     static var dataService:DataService = ProcessInfo.processInfo.arguments.contains("UI-TESTING") ?  MockDataService() : DataServiceImpl.instance
     

@@ -11,9 +11,9 @@ import Foundation
 typealias DataCompletion = (Data?, URLResponse?, Error?) -> Void
 
 /// Stub URLSession for networkless tests
-class SeededURLSession: URLSession {
+class UIMockURLSession: URLSession {
     
     override func dataTask(with: URLRequest, completionHandler: @escaping (Data?, URLResponse?, Error?) -> Void) -> URLSessionDataTask {
-        return SeededDataTask(url: with, completion: completionHandler)
+        return UIMockDataTask(url: with, completion: completionHandler)
     }
 }
