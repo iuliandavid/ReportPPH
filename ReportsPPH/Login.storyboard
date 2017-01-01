@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2657" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment version="2048" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -42,6 +42,7 @@
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="KbS-dS-iSF">
                                 <rect key="frame" x="36" y="95" width="303" height="35"/>
+                                <accessibility key="accessibilityConfiguration" identifier="usernameText"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="KjV-gi-dK8"/>
                                 </constraints>
@@ -51,6 +52,7 @@
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="th6-UV-K73">
                                 <rect key="frame" x="36" y="205" width="303" height="35"/>
+                                <accessibility key="accessibilityConfiguration" identifier="passwordText"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="I5t-3a-3oj"/>
                                 </constraints>
@@ -89,6 +91,10 @@
                             <constraint firstItem="th6-UV-K73" firstAttribute="leading" secondItem="OPP-FA-orW" secondAttribute="leadingMargin" constant="20" id="vQv-XJ-KaF"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="passwordTxt" destination="th6-UV-K73" id="NcT-Oh-Mdi"/>
+                        <outlet property="usernameTxt" destination="KbS-dS-iSF" id="7Zb-VZ-6Up"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Ac-wj-kdf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

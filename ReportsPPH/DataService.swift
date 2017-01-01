@@ -1,37 +1,26 @@
 //
-//  DataService.swift
-//  ReportsPPH
-//
-//  Created by iulian david on 11/29/16.
-//  Copyright © 2016 iulian david. All rights reserved.
+// Created by iulian david on 12/26/16.
+// Copyright (c) 2016 iulian david. All rights reserved.
 //
 
 import Foundation
 
-typealias TestLoginCompleted = () -> ()
+typealias TestLoginCompleted = (Bool) -> ()
 
 
-class DataService {
-    
-    
-    static let instance = DataService()
-    
+protocol DataService {
+
     /**
-     Variable that stores the login status
+     Retrieve the user property
     */
-    var isUserLoggedIn = false
+    var user:UserAuth? {
+            get
+            set
+        }
     
-    
-    /**
-     Test if we saved the login credentials
-     If we get the login credentials we issue a login
-    */
-    func testLogin(completed: @escaping TestLoginCompleted){
-        
-        
-        
-        completed()
-    }
-    
-    
+    func testLogin(completed: @escaping TestLoginCompleted)
+
+    func saveUserData()
+
+    func loadUserData()
 }

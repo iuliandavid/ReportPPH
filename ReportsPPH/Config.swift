@@ -25,7 +25,7 @@ class Config {
     let clientSecret: String?
     
     private  init(){
-
+        
         let configDict = UtilsHelper.loadFromConfigFile(fileName: "Config_debug", params: ["wsUrl", "wsApi", "clientID", "clientSecret"])
         wsUrl = configDict?["wsUrl"]
         wsApi = configDict?["wsApi"]
@@ -33,5 +33,13 @@ class Config {
         clientSecret = configDict?["clientSecret"]
     }
     
+    static let API_OAUTH_ENDPOINT = "/oauth/token"
     
+    enum AnimationTimes: Double {
+        case SHORT = 0.2
+        case LONG = 1
     }
+    
+    let urlSession: URLSession = ProcessInfo.processInfo.arguments.contains("UI-TESTING") ? UIMockURLSession() : URLSession.shared
+
+}
