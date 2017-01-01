@@ -14,7 +14,7 @@ class HTTPClientTests_Part2: XCTestCase {
     var httpClient: HTTPClient!
     let session = MockURLSession()
     
-    let EMPTY_URL = URL(string: "http://localhost")!
+    let EMPTY_URL = URL(string: "http://empty_url")!
     
     override func setUp() {
         super.setUp()
@@ -37,7 +37,7 @@ class HTTPClientTests_Part2: XCTestCase {
         session.nextResponse = HTTPURLResponse(statusCode: statusCode!)
 
         let expectationVar = expectation(description: "Wait for url to load.")
-        let url = URLRequest(url: NSURL(string: "")! as URL,
+        let url = URLRequest(url: EMPTY_URL,
                              cachePolicy: .useProtocolCachePolicy,
                              timeoutInterval: 0.0)
         
@@ -134,7 +134,7 @@ class HTTPClientTests_Part2: XCTestCase {
 extension HTTPURLResponse {
     
     convenience init?(statusCode: Int) {
-        self.init(url: URL(string: "http://localhost")!, statusCode: statusCode,
+        self.init(url: URL(string: "http://empty_url")!, statusCode: statusCode,
                   httpVersion: nil, headerFields: nil)
     }
 }

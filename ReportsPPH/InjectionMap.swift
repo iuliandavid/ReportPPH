@@ -9,7 +9,7 @@
 import Foundation
 
 struct InjectionMap {
-    static var dataService:DataService = DataServiceImpl.instance
+    static var dataService:DataService = ProcessInfo.processInfo.arguments.contains("UI-TESTING") ?  MockDataService() : DataServiceImpl.instance
     
     static var networking:NetworkingApi = ApiClient.instance
 }

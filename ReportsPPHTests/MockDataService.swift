@@ -7,7 +7,6 @@
 //
 
 import Foundation
-@testable import ReportsPPH
 
 /**
  Class used for Data Service Tests that uses for keychain an in memory variable
@@ -16,7 +15,7 @@ class MockDataService: DataService {
     
     private var mockUser: UserAuth?
     
-    /** The In-Memory variable used to mock the Keychain */
+    ///The In-Memory variable used to mock the Keychain
     private var mockableKeychainedUser: UserAuth?
     
     init() {
@@ -34,12 +33,15 @@ class MockDataService: DataService {
     
     
     func testLogin(completed: @escaping TestLoginCompleted){
-        
+        if user?.tokenInfo != nil {
+            completed(true)
+        } else {
+            completed(false)
+        }
     }
     
-    /**
-    Mock a persistence save with the use of **mockableKeychainedUser**
-    */
+    
+    /// Mock a persistence save with the use of **mockableKeychainedUser**
     func saveUserData(){
         mockableKeychainedUser = mockUser
     }

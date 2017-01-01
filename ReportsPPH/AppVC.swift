@@ -13,6 +13,7 @@ import UIKit
  */
 class AppVC: UIViewController {
 
+    @IBOutlet weak var wellcomeLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
 

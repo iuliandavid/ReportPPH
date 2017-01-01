@@ -45,7 +45,7 @@ class HTTPClient {
         Defaults to **URLSession.shared**
      
      */
-    init(session: URLSessionProtocol = URLSession.shared) {
+    init(session: URLSessionProtocol = Config.instance.urlSession) {
         self.session = session
     }
     

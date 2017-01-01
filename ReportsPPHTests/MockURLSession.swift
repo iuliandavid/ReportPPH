@@ -7,7 +7,6 @@
 //
 
 import Foundation
-@testable import ReportsPPH
 
 class MockURLSession: URLSessionProtocol {
     var nextDataTask = MockURLSessionDataTask()

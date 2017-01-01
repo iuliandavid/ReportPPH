@@ -13,7 +13,7 @@ class HTTPClientTests_Part1: XCTestCase {
     var subject: HTTPClient!
     let session = MockURLSession()
     
-    let EMPTY_URL = "http://localhost"
+    let EMPTY_URL = "http://empty_url"
     
     override func setUp() {
         super.setUp()

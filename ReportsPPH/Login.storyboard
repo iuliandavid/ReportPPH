@@ -42,6 +42,7 @@
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="KbS-dS-iSF">
                                 <rect key="frame" x="36" y="95" width="303" height="35"/>
+                                <accessibility key="accessibilityConfiguration" identifier="usernameText"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="KjV-gi-dK8"/>
                                 </constraints>
@@ -51,6 +52,7 @@
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="th6-UV-K73">
                                 <rect key="frame" x="36" y="205" width="303" height="35"/>
+                                <accessibility key="accessibilityConfiguration" identifier="passwordText"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="I5t-3a-3oj"/>
                                 </constraints>

@@ -7,10 +7,8 @@
 //
 
 import Foundation
-@testable import ReportsPPH
 
-
-class MockURLSessionDataTask:URLSessionDataTaskProtocol {
+class MockURLSessionDataTask: URLSessionDataTaskProtocol {
     
     private (set) var resumeWasCalled = false
     
