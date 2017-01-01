@@ -17,6 +17,10 @@ class InitialViewController: UIViewController {
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+
+///        Left it with the purpose of cleanin the keychain when needed
+//        let keychain = KeychainSwift()
+//        keychain.delete("userAuth")
         
         SwiftSpinner.show("Initial Data")
         dataService.testLogin {

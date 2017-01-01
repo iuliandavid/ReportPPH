@@ -11,7 +11,7 @@ import Foundation
 /**
  
  Class needed to sutb the URLSession
- It will be used in tests, and it will search for the value set in **UITests** class for  **app.launchEnvironment**
+ It will be used in tests, and it will search for the value set in **LoginSuccessfullAuthenticationTest** class for  **app.launchEnvironment**
  
  - SeeAlso:
     [Masillotti](http://masilotti.com/ui-testing-stub-network-data/)
@@ -31,10 +31,19 @@ class UIMockDataTask: URLSessionDataTask {
             print("Error")
             return
         }
+
         if let json = ProcessInfo.processInfo.environment[url.absoluteString] {
-            let response = HTTPURLResponse(url: url, statusCode: 200,
-                                           httpVersion: nil, headerFields: nil)
             let data = json.data(using: String.Encoding.utf8)
+            
+            var response: HTTPURLResponse?
+            if let json = try? JSONSerialization.jsonObject(with: data!) as? [String:Any],let _ = json?["error"] as? String {
+                response = HTTPURLResponse(url: url, statusCode: 400,
+                                           httpVersion: nil, headerFields: nil)
+            } else {
+                response = HTTPURLResponse(url: url, statusCode: 200,
+                                           httpVersion: nil, headerFields: nil)
+            }
+        
             completion(data, response, nil)
         }
     }

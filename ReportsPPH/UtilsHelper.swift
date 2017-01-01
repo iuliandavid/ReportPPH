@@ -47,8 +47,6 @@ class UtilsHelper {
                         }
                         result?[key] = value
                     }
-                    
-                    
                 }
                 
             }

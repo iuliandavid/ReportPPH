@@ -1,5 +1,5 @@
 //
-//  UITests.swift
+//  LoginSuccessfullAuthenticationTest.swift
 //  ReportsPPH
 //
 //  Created by iulian david on 12/31/16.
@@ -10,7 +10,7 @@ import XCTest
 @testable import ReportsPPH
 
 @available(iOS 9.0, *)
-class UITests: XCTestCase {
+class LoginSuccessfullAuthenticationTest: XCTestCase {
     let app = XCUIApplication()
     
     
@@ -39,18 +39,7 @@ class UITests: XCTestCase {
     func  testFullAuthenticatication()  {
        
         let usernameTextField = app.textFields["usernameText"]
-//        let existsUsername = NSPredicate(format: "exists == true")
-//        expectation(for: existsUsername, evaluatedWith: usernameTextField, handler: nil)
-//        waitForExpectations(timeout: 0.1, handler: nil)
-        
-        
         let passwordTextField = app.secureTextFields["passwordText"]
-//        let existsPassword = NSPredicate(format: "exists == true")
-//        expectation(for: existsPassword, evaluatedWith: passwordTextField, handler: nil)
-//        waitForExpectations(timeout: 0.1, handler: nil)
-        
-//        let element = app.children(matching: .window).element(boundBy: 0).children(matching: .other).element.children(matching: .other).element
-//        element.children(matching: .textField).element.tap()
         usernameTextField.tap()
         usernameTextField.typeText("")
         usernameTextField.typeText("test")
@@ -61,7 +50,7 @@ class UITests: XCTestCase {
         passwordTextField.typeText("test")
         app.buttons["Login"].tap()
 
-        ///introduce a delay and then show APPVC with wellcomeLabel's text **Logged in** app.labels.
+        ///introduce a delay and then show AppVC with wellcomeLabel's text **Logged in** app.labels.
         let label = app.staticTexts["Logged in"]
         let exists = NSPredicate(format: "exists == true")
         expectation(for: exists, evaluatedWith: label, handler: nil)

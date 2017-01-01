@@ -22,7 +22,7 @@
 		B86EBC011E172F3A00161B43 /* MyError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B86EBC001E172F3A00161B43 /* MyError.swift */; };
 		B86EBC041E17B5DD00161B43 /* UIMockURLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = B86EBC031E17B5DD00161B43 /* UIMockURLSession.swift */; };
 		B86EBC071E17B69F00161B43 /* UIMockDataTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = B86EBC061E17B69F00161B43 /* UIMockDataTask.swift */; };
-		B86EBC0A1E17BBB000161B43 /* UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B86EBC091E17BBB000161B43 /* UITests.swift */; };
+		B86EBC0A1E17BBB000161B43 /* LoginSuccessfullAuthenticationTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B86EBC091E17BBB000161B43 /* LoginSuccessfullAuthenticationTest.swift */; };
 		B86EBC0E1E18104C00161B43 /* MockDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B84B52451E144BFD00383F41 /* MockDataService.swift */; };
 		B86EBC0F1E18105100161B43 /* MockURLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = B84B52511E149B9D00383F41 /* MockURLSession.swift */; };
 		B86EBC101E18105500161B43 /* MockURLSessionDataTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = B84B52531E149BF900383F41 /* MockURLSessionDataTask.swift */; };
@@ -52,6 +52,7 @@
 		B8C95ED81DF1ED8A0027CC4C /* UserAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C95ED71DF1ED8A0027CC4C /* UserAuth.swift */; };
 		B8C95EDA1DF246070027CC4C /* DataServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C95ED91DF246070027CC4C /* DataServiceTests.swift */; };
 		B8C95EE01DF2CDCB0027CC4C /* KeychainSwiftDistrib.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C95EDF1DF2CDCB0027CC4C /* KeychainSwiftDistrib.swift */; };
+		B9D04EF19547EF796C42CCE6 /* LoginBadCredentialTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D04E219A8092AF88DC895D /* LoginBadCredentialTest.swift */; };
 		B9D04F34A62281C148C74839 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D049F89C71BBD9E8F0520C /* DataService.swift */; };
 /* End PBXBuildFile section */
 
@@ -92,7 +93,7 @@
 		B86EBC031E17B5DD00161B43 /* UIMockURLSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIMockURLSession.swift; sourceTree = "<group>"; };
 		B86EBC061E17B69F00161B43 /* UIMockDataTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIMockDataTask.swift; sourceTree = "<group>"; };
 		B86EBC081E17BBAF00161B43 /* ReportsPPHUITests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ReportsPPHUITests-Bridging-Header.h"; sourceTree = "<group>"; };
-		B86EBC091E17BBB000161B43 /* UITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITests.swift; sourceTree = "<group>"; };
+		B86EBC091E17BBB000161B43 /* LoginSuccessfullAuthenticationTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginSuccessfullAuthenticationTest.swift; sourceTree = "<group>"; };
 		B8C95E5D1DE97ADB0027CC4C /* ReportsPPH.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReportsPPH.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8C95E601DE97ADB0027CC4C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B8C95E621DE97ADB0027CC4C /* InitialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialViewController.swift; sourceTree = "<group>"; };
@@ -123,6 +124,7 @@
 		B8C95EDB1DF2CCF10027CC4C /* ReportsPPH.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ReportsPPH.entitlements; sourceTree = "<group>"; };
 		B8C95EDF1DF2CDCB0027CC4C /* KeychainSwiftDistrib.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainSwiftDistrib.swift; sourceTree = "<group>"; };
 		B9D049F89C71BBD9E8F0520C /* DataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
+		B9D04E219A8092AF88DC895D /* LoginBadCredentialTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginBadCredentialTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -265,8 +267,9 @@
 			isa = PBXGroup;
 			children = (
 				B8C95E851DE97ADC0027CC4C /* Info.plist */,
-				B86EBC091E17BBB000161B43 /* UITests.swift */,
+				B86EBC091E17BBB000161B43 /* LoginSuccessfullAuthenticationTest.swift */,
 				B86EBC081E17BBAF00161B43 /* ReportsPPHUITests-Bridging-Header.h */,
+				B9D04E219A8092AF88DC895D /* LoginBadCredentialTest.swift */,
 			);
 			path = ReportsPPHUITests;
 			sourceTree = "<group>";
@@ -543,7 +546,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B86EBC0A1E17BBB000161B43 /* UITests.swift in Sources */,
+				B86EBC0A1E17BBB000161B43 /* LoginSuccessfullAuthenticationTest.swift in Sources */,
+				B9D04EF19547EF796C42CCE6 /* LoginBadCredentialTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

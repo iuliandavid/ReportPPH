@@ -64,7 +64,7 @@ class HTTPClient {
             var err: MyError? = nil
             if let _ = error {
                 err = MyError.NetworkError
-            } else if let _ = resp, let statusCode = resp?.statusCode, 200...299 ~= statusCode {
+            } else if let _ = resp, let statusCode = resp?.statusCode, (200...299 ~= statusCode || 400...499 ~= statusCode) {
                 guard data != nil else{
                     completion(statusCode, nil, nil)
                     return
@@ -76,19 +76,7 @@ class HTTPClient {
                     err = MyError.UnhandledError("Unable to deserialize the response: code:\(resp?.statusCode) to JSON")
                 }
                 
-            } else if let _ = resp, let statusCode = resp?.statusCode, 400...499 ~= statusCode {
-                guard data != nil else{
-                    completion(statusCode, nil, nil)
-                    return
-                }
-                do{
-                    json = try JSONSerialization.jsonObject(with: data!, options:.allowFragments)
-                    
-                }catch {
-                    err = MyError.UnhandledError("Unable to deserialize the response: code:\(resp?.statusCode) to JSON")
-                }
-            }
-            else {
+            } else {
                 err = MyError.UnhandledError("Unauthorized call:\(resp?.statusCode)")
             }
             completion(resp?.statusCode, json, err)
