@@ -26,6 +26,14 @@
 		B86EBC0E1E18104C00161B43 /* MockDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B84B52451E144BFD00383F41 /* MockDataService.swift */; };
 		B86EBC0F1E18105100161B43 /* MockURLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = B84B52511E149B9D00383F41 /* MockURLSession.swift */; };
 		B86EBC101E18105500161B43 /* MockURLSessionDataTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = B84B52531E149BF900383F41 /* MockURLSessionDataTask.swift */; };
+		B898B3851E19975800749899 /* SlideMenuDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B898B3841E19975800749899 /* SlideMenuDelegate.swift */; };
+		B898B3871E19981900749899 /* SlideMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B898B3861E19981900749899 /* SlideMenuController.swift */; };
+		B898B3891E199DD600749899 /* SlideMenu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B898B3881E199DD600749899 /* SlideMenu.storyboard */; };
+		B898B38D1E19AB4B00749899 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B898B38C1E19AB4B00749899 /* BaseViewController.swift */; };
+		B898B38F1E19D07700749899 /* Stocks.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B898B38E1E19D07700749899 /* Stocks.storyboard */; };
+		B898B3911E19D0D900749899 /* Sales.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B898B3901E19D0D900749899 /* Sales.storyboard */; };
+		B898B3931E19D1EC00749899 /* StocksVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B898B3921E19D1EC00749899 /* StocksVC.swift */; };
+		B898B3951E19D23600749899 /* SalesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B898B3941E19D23600749899 /* SalesVC.swift */; };
 		B8C95E611DE97ADB0027CC4C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C95E601DE97ADB0027CC4C /* AppDelegate.swift */; };
 		B8C95E631DE97ADB0027CC4C /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C95E621DE97ADB0027CC4C /* InitialViewController.swift */; };
 		B8C95E661DE97ADB0027CC4C /* Initial.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8C95E641DE97ADB0027CC4C /* Initial.storyboard */; };
@@ -94,6 +102,14 @@
 		B86EBC061E17B69F00161B43 /* UIMockDataTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIMockDataTask.swift; sourceTree = "<group>"; };
 		B86EBC081E17BBAF00161B43 /* ReportsPPHUITests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ReportsPPHUITests-Bridging-Header.h"; sourceTree = "<group>"; };
 		B86EBC091E17BBB000161B43 /* LoginSuccessfullAuthenticationTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginSuccessfullAuthenticationTest.swift; sourceTree = "<group>"; };
+		B898B3841E19975800749899 /* SlideMenuDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideMenuDelegate.swift; sourceTree = "<group>"; };
+		B898B3861E19981900749899 /* SlideMenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideMenuController.swift; sourceTree = "<group>"; };
+		B898B3881E199DD600749899 /* SlideMenu.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SlideMenu.storyboard; sourceTree = "<group>"; };
+		B898B38C1E19AB4B00749899 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		B898B38E1E19D07700749899 /* Stocks.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Stocks.storyboard; sourceTree = "<group>"; };
+		B898B3901E19D0D900749899 /* Sales.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Sales.storyboard; sourceTree = "<group>"; };
+		B898B3921E19D1EC00749899 /* StocksVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StocksVC.swift; sourceTree = "<group>"; };
+		B898B3941E19D23600749899 /* SalesVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SalesVC.swift; sourceTree = "<group>"; };
 		B8C95E5D1DE97ADB0027CC4C /* ReportsPPH.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReportsPPH.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8C95E601DE97ADB0027CC4C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B8C95E621DE97ADB0027CC4C /* InitialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialViewController.swift; sourceTree = "<group>"; };
@@ -289,7 +305,10 @@
 				B8C95E641DE97ADB0027CC4C /* Initial.storyboard */,
 				B8C95E6C1DE97ADB0027CC4C /* LaunchScreen.storyboard */,
 				B8C95EB51DEBF6F50027CC4C /* App.storyboard */,
+				B898B38E1E19D07700749899 /* Stocks.storyboard */,
+				B898B3901E19D0D900749899 /* Sales.storyboard */,
 				B8C95EB91DEBF7080027CC4C /* Login.storyboard */,
+				B898B3881E199DD600749899 /* SlideMenu.storyboard */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -300,6 +319,11 @@
 				B8C95E621DE97ADB0027CC4C /* InitialViewController.swift */,
 				B8C95EBD1DED35460027CC4C /* AppVC.swift */,
 				B8C95EC11DED35580027CC4C /* LoginVC.swift */,
+				B898B3841E19975800749899 /* SlideMenuDelegate.swift */,
+				B898B3861E19981900749899 /* SlideMenuController.swift */,
+				B898B38C1E19AB4B00749899 /* BaseViewController.swift */,
+				B898B3921E19D1EC00749899 /* StocksVC.swift */,
+				B898B3941E19D23600749899 /* SalesVC.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -464,11 +488,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				B8C95EA21DE9823C0027CC4C /* Config_prod.plist in Resources */,
+				B898B38F1E19D07700749899 /* Stocks.storyboard in Resources */,
+				B898B3891E199DD600749899 /* SlideMenu.storyboard in Resources */,
 				B8C95E6E1DE97ADB0027CC4C /* LaunchScreen.storyboard in Resources */,
 				B8C95EBA1DEBF7080027CC4C /* Login.storyboard in Resources */,
 				B8C95EB61DEBF6F50027CC4C /* App.storyboard in Resources */,
 				B8C95E6B1DE97ADB0027CC4C /* Assets.xcassets in Resources */,
 				B8C95EB21DEBE48F0027CC4C /* Config_debug.plist in Resources */,
+				B898B3911E19D0D900749899 /* Sales.storyboard in Resources */,
 				B8C95E661DE97ADB0027CC4C /* Initial.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -503,22 +530,27 @@
 				B84B52441E13BC7400383F41 /* Result.swift in Sources */,
 				B84B523C1E12912D00383F41 /* DataServiceInjected.swift in Sources */,
 				B8C95ED81DF1ED8A0027CC4C /* UserAuth.swift in Sources */,
+				B898B38D1E19AB4B00749899 /* BaseViewController.swift in Sources */,
 				B8C95EAE1DE992490027CC4C /* UtilsHelper.swift in Sources */,
 				B86EBC011E172F3A00161B43 /* MyError.swift in Sources */,
 				B8C95E631DE97ADB0027CC4C /* InitialViewController.swift in Sources */,
 				B8C95EC21DED35580027CC4C /* LoginVC.swift in Sources */,
+				B898B3871E19981900749899 /* SlideMenuController.swift in Sources */,
+				B898B3931E19D1EC00749899 /* StocksVC.swift in Sources */,
 				B86EBC041E17B5DD00161B43 /* UIMockURLSession.swift in Sources */,
 				B8C95ED11DF1CB1A0027CC4C /* ApiClient.swift in Sources */,
 				B84B52401E12920100383F41 /* NetworkingApiInjected.swift in Sources */,
 				B86EBC0F1E18105100161B43 /* MockURLSession.swift in Sources */,
 				B84B524D1E149A0600383F41 /* URLSessionDataTaskProtocol.swift in Sources */,
 				B8157D551E0A3A98008ADB90 /* SwiftSpinner.swift in Sources */,
+				B898B3851E19975800749899 /* SlideMenuDelegate.swift in Sources */,
 				B8C95EA91DE983F80027CC4C /* Config.swift in Sources */,
 				B86EBC0E1E18104C00161B43 /* MockDataService.swift in Sources */,
 				B84B52491E1496DC00383F41 /* URLSessionProtocol.swift in Sources */,
 				B8C95ED51DF1EB270027CC4C /* TokenInfo.swift in Sources */,
 				B8C95EE01DF2CDCB0027CC4C /* KeychainSwiftDistrib.swift in Sources */,
 				B8C95E611DE97ADB0027CC4C /* AppDelegate.swift in Sources */,
+				B898B3951E19D23600749899 /* SalesVC.swift in Sources */,
 				B86EBBB81E1668F300161B43 /* HTTPClient.swift in Sources */,
 				B8C95EC61DED39AC0027CC4C /* DataServiceImpl.swift in Sources */,
 				B8C95EBE1DED35460027CC4C /* AppVC.swift in Sources */,

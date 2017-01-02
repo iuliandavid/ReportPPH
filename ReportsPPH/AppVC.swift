@@ -11,14 +11,17 @@ import UIKit
 /**
  The view that actually does the reports
  */
-class AppVC: UIViewController {
+class AppVC: BaseViewController {
 
     @IBOutlet weak var wellcomeLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        navigationController?.isNavigationBarHidden = false
+        addSlideMenuButton()
     }
 
-
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+    }
 }

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="lKy-zK-3EI">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--AppVC-->
+        <!--Welcome-->
         <scene sceneID="woy-Fh-KFJ">
             <objects>
-                <viewController storyboardIdentifier="App" id="9e7-XC-ONh" customClass="AppVC" customModule="ReportsPPH" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController restorationIdentifier="App" storyboardIdentifier="App" id="9e7-XC-ONh" customClass="AppVC" customModule="ReportsPPH" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="nZz-iM-pyM"/>
                         <viewControllerLayoutGuide type="bottom" id="zWw-K3-YY7"/>
@@ -21,23 +21,49 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Logged in" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cef-vw-dvd">
-                                <rect key="frame" x="166" y="323" width="76" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Logged in" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cef-vw-dvd">
+                                <rect key="frame" x="149.5" y="323" width="76" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="333-8f-MfR"/>
+                                    <constraint firstAttribute="width" constant="76" id="aT6-0V-qG8"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Cef-vw-dvd" firstAttribute="centerX" secondItem="mS5-e4-1Kd" secondAttribute="centerX" id="Okp-GM-4Ev"/>
+                            <constraint firstItem="Cef-vw-dvd" firstAttribute="centerY" secondItem="mS5-e4-1Kd" secondAttribute="centerY" id="gwx-Ds-6Qz"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Welcome" id="BJx-Lh-bo2"/>
                     <connections>
                         <outlet property="wellcomeLabel" destination="Cef-vw-dvd" id="Mkt-Xw-OfZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e44-n2-qhi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-542" y="-236"/>
+            <point key="canvasLocation" x="148" y="-392.65367316341832"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="oY2-6K-QvP">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="lKy-zK-3EI" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Zos-ae-GL2">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="9e7-XC-ONh" kind="relationship" relationship="rootViewController" id="crg-n6-j2g"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fnn-jr-5ho" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-791.20000000000005" y="-392.65367316341832"/>
         </scene>
     </scenes>
 </document>

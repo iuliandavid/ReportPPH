@@ -40,7 +40,9 @@ class InitialViewController: UIViewController {
     
     func loadMainView() {
         if let appVC = UIStoryboard(name: "App", bundle: nil).instantiateViewController(withIdentifier: "App") as? AppVC {
-            self.present(appVC, animated: true, completion: nil)
+            let navController = UINavigationController(rootViewController: appVC) // Creating a navigation controller with appVC at the root of the navigation stack.
+            self.present(navController, animated:true, completion: nil)
+//            self.present(appVC, animated: true, completion: nil)
         }
     }
     
