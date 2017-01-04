@@ -112,12 +112,7 @@ class BaseViewController: UIViewController, SlideMenuDelegate {
         sender.isEnabled = false
         sender.tag = 10
         
-//        if let appVC = UIStoryboard(name: "App", bundle: nil).instantiateViewController(withIdentifier: "App") as? AppVC {
-//            let navController = UINavigationController(rootViewController: appVC) // Creating a navigation controller with appVC at the root of the navigation stack.
-//            self.present(navController, animated:true, completion: nil)
-//            //            self.present(appVC, animated: true, completion: nil)
-//        }
-//        let menuVC : SlideMenuController = self.storyboard!.instantiateViewController(withIdentifier: "SlideMenuController") as! SlideMenuController
+
         let menuVC : SlideMenuController = UIStoryboard(name: "SlideMenu", bundle: nil).instantiateViewController(withIdentifier: "SlideMenuController") as! SlideMenuController
         menuVC.btnMenu = sender
         menuVC.delegate = self
