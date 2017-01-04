@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/iuliandavid/ReportPPH.svg?branch=sliderMenu)](https://travis-ci.org/iuliandavid/ReportPPH)
 # README #
 
 A Swift implementation for a reporting tool 
