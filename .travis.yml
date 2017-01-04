@@ -10,5 +10,5 @@ xcode_scheme: ReportsPPH #4
 xcode_sdk: iphonesimulator10.0 #5
 
 script:
-  - xcodebuild test -project ReportsPPH.xcodeproj -scheme "All in ApiClientTests.swift" -destination 'platform=iOS Simulator,name=iPhone 5,OS=9.3' ONLY_ACTIVE_ARCH=NO
+  - xcodebuild test -project ReportsPPH.xcodeproj -scheme "All in ApiClientTests.swift" -destination 'platform=iOS Simulator,name=iPhone 5,OS=10.0' ONLY_ACTIVE_ARCH=NO
   - xcodebuild -project ReportsPPH.xcodeproj -target ReportsPPH -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO
