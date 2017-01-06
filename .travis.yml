@@ -10,6 +10,5 @@ xcode_scheme: ReportsPPH #4
 xcode_sdk: iphonesimulator10.0 #5
 
 script:
-  - set -o pipefail;
   - xcodebuild test -project ReportsPPH.xcodeproj -scheme "All in ApiClientTests.swift" -sdk iphonesimulator -destination "platform=iOS Simulator,OS=latest,name=iPad Pro (9.7 inch)" build test | xcpretty -c
   - xcodebuild -project ReportsPPH.xcodeproj -target ReportsPPH -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO

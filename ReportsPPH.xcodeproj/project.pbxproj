@@ -40,9 +40,6 @@
 		B8C95E6B1DE97ADB0027CC4C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B8C95E6A1DE97ADB0027CC4C /* Assets.xcassets */; };
 		B8C95E6E1DE97ADB0027CC4C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8C95E6C1DE97ADB0027CC4C /* LaunchScreen.storyboard */; };
 		B8C95EA01DE97F560027CC4C /* LoginTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C95E9F1DE97F560027CC4C /* LoginTests.swift */; };
-		B8C95EA21DE9823C0027CC4C /* Config_prod.plist in Resources */ = {isa = PBXBuildFile; fileRef = B8C95EA11DE9823C0027CC4C /* Config_prod.plist */; };
-		B8C95EA31DE9823C0027CC4C /* Config_prod.plist in Resources */ = {isa = PBXBuildFile; fileRef = B8C95EA11DE9823C0027CC4C /* Config_prod.plist */; };
-		B8C95EA41DE9823C0027CC4C /* Config_prod.plist in Resources */ = {isa = PBXBuildFile; fileRef = B8C95EA11DE9823C0027CC4C /* Config_prod.plist */; };
 		B8C95EA91DE983F80027CC4C /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C95EA81DE983F80027CC4C /* Config.swift */; };
 		B8C95EAE1DE992490027CC4C /* UtilsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C95EAD1DE992490027CC4C /* UtilsHelper.swift */; };
 		B8C95EB21DEBE48F0027CC4C /* Config_debug.plist in Resources */ = {isa = PBXBuildFile; fileRef = B8C95EB11DEBE48F0027CC4C /* Config_debug.plist */; };
@@ -122,7 +119,6 @@
 		B8C95E7F1DE97ADC0027CC4C /* ReportsPPHUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ReportsPPHUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8C95E851DE97ADC0027CC4C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B8C95E9F1DE97F560027CC4C /* LoginTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginTests.swift; sourceTree = "<group>"; };
-		B8C95EA11DE9823C0027CC4C /* Config_prod.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Config_prod.plist; sourceTree = "<group>"; };
 		B8C95EA81DE983F80027CC4C /* Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		B8C95EAD1DE992490027CC4C /* UtilsHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UtilsHelper.swift; sourceTree = "<group>"; };
 		B8C95EB11DEBE48F0027CC4C /* Config_debug.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Config_debug.plist; sourceTree = "<group>"; };
@@ -347,7 +343,6 @@
 			children = (
 				B8C95E6F1DE97ADB0027CC4C /* Info.plist */,
 				B8C95E6A1DE97ADB0027CC4C /* Assets.xcassets */,
-				B8C95EA11DE9823C0027CC4C /* Config_prod.plist */,
 				B8C95EB11DEBE48F0027CC4C /* Config_debug.plist */,
 			);
 			name = Resources;
@@ -487,7 +482,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B8C95EA21DE9823C0027CC4C /* Config_prod.plist in Resources */,
 				B898B38F1E19D07700749899 /* Stocks.storyboard in Resources */,
 				B898B3891E199DD600749899 /* SlideMenu.storyboard in Resources */,
 				B8C95E6E1DE97ADB0027CC4C /* LaunchScreen.storyboard in Resources */,
@@ -505,7 +499,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				B8C95EB31DEBE48F0027CC4C /* Config_debug.plist in Resources */,
-				B8C95EA31DE9823C0027CC4C /* Config_prod.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -514,7 +507,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				B8C95EB41DEBE48F0027CC4C /* Config_debug.plist in Resources */,
-				B8C95EA41DE9823C0027CC4C /* Config_prod.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
