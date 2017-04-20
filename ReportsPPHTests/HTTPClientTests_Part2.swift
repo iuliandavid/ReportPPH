@@ -97,7 +97,7 @@ class HTTPClientTests_Part2: XCTestCase {
         //Given
         let statusCode:Int? = 199
         session.nextResponse = HTTPURLResponse(statusCode: statusCode!)
-        let errorTest = MyError.UnhandledError("Unauthorized call:\(statusCode)")
+        let errorTest = MyError.UnhandledError("Unauthorized call:\(statusCode!)")
         var error: MyError?
         //when
         httpClient.executeRequest(url: URLRequest(url: EMPTY_URL)) { (_,_, theError) -> Void in
@@ -116,7 +116,7 @@ class HTTPClientTests_Part2: XCTestCase {
         let statusCode:Int? = 300
         session.nextResponse = HTTPURLResponse(statusCode: statusCode!)
         
-        let errorTest = MyError.UnhandledError("Unauthorized call:\(statusCode)")
+        let errorTest = MyError.UnhandledError("Unauthorized call:\(statusCode!)")
         
         var error: MyError?
         //when

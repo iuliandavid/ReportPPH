@@ -13,7 +13,6 @@ import UIKit
  */
 class AppVC: BaseViewController {
 
-    @IBOutlet weak var wellcomeLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.isNavigationBarHidden = false

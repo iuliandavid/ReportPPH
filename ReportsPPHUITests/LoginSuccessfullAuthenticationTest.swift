@@ -51,9 +51,9 @@ class LoginSuccessfullAuthenticationTest: XCTestCase {
         app.buttons["Login"].tap()
 
         ///introduce a delay and then show AppVC with wellcomeLabel's text **Logged in** app.labels.
-        let label = app.staticTexts["Logged in"]
+        let navigationBar = app.navigationBars["Welcome"]
         let exists = NSPredicate(format: "exists == true")
-        expectation(for: exists, evaluatedWith: label, handler: nil)
+        expectation(for: exists, evaluatedWith: navigationBar, handler: nil)
         waitForExpectations(timeout: 5, handler: nil)
 
     }

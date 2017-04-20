@@ -23,13 +23,10 @@ class InitialViewController: UIViewController {
 //        keychain.delete("userAuth")
         
         SwiftSpinner.show("Initial Data")
-        dataService.testLogin {
-            (isUserLoggedIn) in
+        dataService.testLogin { (isUserLoggedIn) in
             if isUserLoggedIn {
                 self.loadMainView()
-            }
-                
-            else{
+            } else{
                 self.loadLoginView()
             }
             SwiftSpinner.hide()
@@ -37,6 +34,7 @@ class InitialViewController: UIViewController {
         
         
     }
+    
     
     func loadMainView() {
         if let appVC = UIStoryboard(name: "App", bundle: nil).instantiateViewController(withIdentifier: "App") as? AppVC {

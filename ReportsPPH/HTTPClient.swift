@@ -73,11 +73,17 @@ class HTTPClient {
                     json = try JSONSerialization.jsonObject(with: data!, options:.allowFragments)
                     
                 }catch {
-                    err = MyError.UnhandledError("Unable to deserialize the response: code:\(resp?.statusCode) to JSON")
+                    err = MyError.UnhandledError("Unable to deserialize the response: code:\(statusCode) to JSON")
                 }
                 
             } else {
-                err = MyError.UnhandledError("Unauthorized call:\(resp?.statusCode)")
+                guard  let statusCode = resp?.statusCode else {
+                    err = MyError.UnhandledError("Unauthorized call:\(1000)")
+                    completion(1000, nil, err)
+                    return
+                }
+                err = MyError.UnhandledError("Unauthorized call:\(statusCode)")
+                
             }
             completion(resp?.statusCode, json, err)
         }

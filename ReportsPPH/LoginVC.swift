@@ -22,6 +22,8 @@ class LoginVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         registerForNotifications()
+        
+        usernameTxt.autocorrectionType = .no
 
     }
     
@@ -94,8 +96,8 @@ class LoginVC: UIViewController {
     }
    
     private func registerForNotifications() {
-        NotificationCenter.default.addObserver(self, selector: #selector(LoginVC.keyboardWillShow(_:)), name:NSNotification.Name.UIKeyboardWillShow, object: nil);
-        NotificationCenter.default.addObserver(self, selector: #selector(LoginVC.keyboardWillHide(_:)), name:NSNotification.Name.UIKeyboardWillHide, object: nil);
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name:NSNotification.Name.UIKeyboardWillShow, object: nil);
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name:NSNotification.Name.UIKeyboardWillHide, object: nil);
     }
    
     func showAlert(withTitle title:String, message:String) {
@@ -110,7 +112,7 @@ class LoginVC: UIViewController {
 }
 
 
-extension LoginVC: UITextFieldDelegate, DataServiceInjected, NetworkingApiInjected {
+extension LoginVC: UITextFieldDelegate {
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
         self.activeTextField = textField
@@ -121,5 +123,7 @@ extension LoginVC: UITextFieldDelegate, DataServiceInjected, NetworkingApiInject
         self.activeTextField = nil
     }
 }
+
+extension LoginVC: DataServiceInjected, NetworkingApiInjected {}
 
 

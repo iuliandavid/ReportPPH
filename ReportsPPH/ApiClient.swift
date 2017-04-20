@@ -90,7 +90,7 @@ class ApiClient: NetworkingApi {
             } else {
                 guard let httpResponse = jsonData as? [String: AnyObject] else {
                     
-                    completed(Result.Failure(MyError.AuthenticationFailure("Error decoding the result: \(jsonData)")))
+                    completed(Result.Failure(MyError.AuthenticationFailure("Error decoding the result: \(String(describing: jsonData))")))
                     return
                 }
                 print(httpResponse)
