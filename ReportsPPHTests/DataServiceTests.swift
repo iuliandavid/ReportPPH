@@ -15,7 +15,7 @@ class DataServiceTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
-        InjectionMap.dataService = MockDataService()
+        
     }
     
     override func tearDown() {
@@ -32,7 +32,7 @@ class DataServiceTests: XCTestCase {
     
     func testShouldSaveDataToUserDefaults() {
         //Given
-        var dataService:DataService = InjectionMap.dataService
+        var dataService:DataService = MockDataService()
         let userAuth = dataService.user!
         
         XCTAssertNotNil(userAuth)

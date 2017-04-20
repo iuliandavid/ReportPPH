@@ -27,7 +27,10 @@ class LoginSuccessfullAuthenticationTest: XCTestCase {
 
         app.launchArguments += ["UI-TESTING"]
         app.launchEnvironment[TEST_URL] = "{\"access_token\": \"access_token\", \"refresh_token\": \"refresh_token\"} "
+       
         app.launch()
+        
+        
         
     }
     

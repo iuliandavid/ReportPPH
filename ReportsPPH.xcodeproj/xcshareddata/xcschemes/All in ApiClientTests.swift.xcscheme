@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
+   LastUpgradeVersion = "0830"
    version = "1.7">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -53,6 +54,15 @@
             </LocationScenarioReference>
          </TestableReference>
       </Testables>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "B8C95E731DE97ADB0027CC4C"
+            BuildableName = "ReportsPPHTests.xctest"
+            BlueprintName = "ReportsPPHTests"
+            ReferencedContainer = "container:ReportsPPH.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>
@@ -84,6 +94,15 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "B8C95E731DE97ADB0027CC4C"
+            BuildableName = "ReportsPPHTests.xctest"
+            BlueprintName = "ReportsPPHTests"
+            ReferencedContainer = "container:ReportsPPH.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">
